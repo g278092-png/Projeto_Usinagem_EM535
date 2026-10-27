@@ -1,0 +1,115 @@
+% Capítulo 6 – gerado a partir do relatório; edite livremente
+\chapter{POTÊNCIAS DE CORTE}
+
+\section{Metodologia}
+
+A força de corte foi calculada pelo modelo de Kienzle (Aula 6\_1), com os coeficientes do SAE 8620. No torneamento, a espessura h e a largura b do cavaco vêm do avanço, da profundidade de corte a\textsubscript{p} e do ângulo de posição $\chi$\textsubscript{r}, e a potência de corte resulta da força e da velocidade de corte:
+
+
+\begin{equation}\label{eq:hb}
+  h = f \cdot \sin \chi_{r} \quad b = \frac{a_{p}}{\sin \chi_{r}}
+\end{equation}
+
+\begin{equation}\label{eq:kienzle}
+  F_{c} = K_{s1} \cdot h^{1-z} \cdot b
+\end{equation}
+
+\begin{equation}\label{eq:pc}
+  P_{c} = \frac{F_{c} \cdot v_{c}}{60 \cdot 10^{3}}
+\end{equation}
+
+com F\textsubscript{c} em N, v\textsubscript{c} em m/min e P\textsubscript{c} em kW. Os coeficientes de Kienzle valem para ferramenta afiada; para considerar o desgaste, a potência foi aumentada em 30 \%, e a potência exigida do motor foi obtida dividindo-se pelo rendimento $\eta$ da máquina, adotado como 0,80 nas máquinas com motor acoplado diretamente ao eixo-árvore e 0,70 na fresadora universal, que tem transmissão por engrenagens (Aula 6):
+
+
+\begin{equation}\label{eq:pm}
+  P_{m} = \frac{1,3 \cdot P_{c}}{\eta}
+\end{equation}
+
+No torno, a potência disponível depende da rotação, pois abaixo de cerca de 600 rpm o motor fica limitado pelo torque máximo:
+
+
+\begin{equation}\label{eq:pdisp}
+  P_{\text{disp}} = \min \left( 9; \frac{140 \cdot 2 \pi \cdot n}{60 \cdot 10^{3}} \right)
+\end{equation}
+
+Na furação, cada ponto da aresta é cortado uma vez por volta, com espessura h = f$\cdot$sen $\chi$\textsubscript{r}, e a força de corte atua, em média, a um quarto do diâmetro D da broca. Com isso, a potência fica:
+
+
+\begin{equation}\label{eq:pfur}
+  P_{c} = \frac{K_{s} \cdot f \cdot D \cdot v_{c}}{240 \cdot 10^{3}} \quad K_{s} = K_{s1} \cdot h^{-z}
+\end{equation}
+
+Como comparação, a fórmula de Kronenberg (Aula 19) com os coeficientes do aço 1025, o mais próximo disponível na tabela, fornece momento torsor de 20,5 N$\cdot$m, contra 23,4 N$\cdot$m obtidos com Kienzle. A diferença é coerente com a maior resistência do 8620, e por isso foi mantido o valor de Kienzle.
+
+
+No fresamento (Aula 17), usa-se a espessura média do cavaco h\textsubscript{m} e a pressão específica média K\textsubscript{sm}:
+
+
+\begin{equation}\label{eq:hm}
+  h_{m} = f_{z} \cdot \frac{1 - \cos \varphi_{0}}{\varphi_{0}}
+\end{equation}
+
+\begin{equation}\label{eq:ksm}
+  K_{sm} = K_{s1} \cdot h_{m}^{-z}
+\end{equation}
+
+\begin{equation}\label{eq:pfres}
+  P_{c} = \frac{K_{sm} \cdot a_{e} \cdot a_{p} \cdot v_{f}}{60 \cdot 10^{6}}
+\end{equation}
+
+Quando a fresa trabalha em canal, com a\textsubscript{e} igual ao diâmetro, a espessura média se reduz a h\textsubscript{m} = 2f\textsubscript{z}/$\pi$. No fresamento dos dentes, o produto a\textsubscript{e}$\cdot$a\textsubscript{p} foi substituído pela área do vão removida em cada passe, calculada a partir do perfil evolvente: 121 mm² no desbaste e 6,3 mm² no acabamento. No brochamento, a força é a soma das forças de Kienzle dos dentes em contato com a peça, considerando subida de 0,06 mm por dente e passo de 6,35 mm.
+
+
+Para a retificação foi usada a energia específica de retificação u, da ordem de 40 J/mm³ para aço temperado com rebolo de óxido de alumínio (MALKIN; GUO, 2008), multiplicada pela taxa de remoção Q\textsubscript{w}:
+
+
+\begin{equation}\label{eq:pret}
+  P_{c} = u \cdot Q_{w}
+\end{equation}
+
+\begin{equation}\label{eq:qw}
+  Q_{w} = a_{e} \cdot s \cdot v_{w} \quad \text{(plana)} \quad Q_{w} = \pi \cdot d \cdot a_{e} \cdot v_{fa} \quad \text{(interna)}
+\end{equation}
+
+\section{Resultados}
+
+Para o faceamento de desbaste, com f = 0,22 mm, a\textsubscript{p} = 1,425 mm e $\chi$\textsubscript{r} = 95°, as Equações \eqref{eq:hb} a \eqref{eq:pm} dão:
+
+
+\[
+  F_{c} = 2100 \cdot 0,219^{0,74} \cdot 1,43 = 977 \ \text{N}
+\]
+
+\[
+  P_{c} = \frac{977 \cdot 300}{60 \cdot 10^{3}} = 4,88 \ \text{kW} \quad P_{m} = \frac{1,3 \cdot 4,88}{0,80} = 7,94 \ \text{kW}
+\]
+
+A 597 rpm o motor dispõe de 8,75 kW (Equação \eqref{eq:pdisp}), e o torque exigido, de 127 N$\cdot$m, fica abaixo do limite de 140 N$\cdot$m. As demais operações foram calculadas da mesma forma, e os resultados estão na Tabela~\ref{tab:pot}.
+
+
+\begin{table}[H]
+\centering
+\caption{Forças e potências de corte}\label{tab:pot}
+{\small\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.3513\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1631\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1506\linewidth-2\tabcolsep\relax}|}
+\hline
+\rowcolor{cinza} \textbf{Operação} & \textbf{F\textsubscript{c} (N)} & \textbf{P\textsubscript{c} (kW)} & \textbf{P\textsubscript{m} (kW)} & \textbf{Potência disponível (kW)} & \textbf{Máquina} \\ \hline
+Faceamento de desbaste (por passe) & 977 & 4,88 & 7,94 & 8,75 & Centur 30D \\ \hline
+Torneamento externo de desbaste & 1.028 & 4,80 & 7,80 & 8,17 & Centur 30D \\ \hline
+Degrau do aro & 788 & 3,94 & 6,41 & 8,92 & Centur 30D \\ \hline
+Acabamento & 258 & 1,72 & 2,80 & 9,00 & Centur 30D \\ \hline
+Furação Ø23 & – & 5,08 & 8,26 & 9,00 & Centur 30D \\ \hline
+Mandrilamento & 287 & 1,10 & 1,79 & 9,00 & Centur 30D \\ \hline
+Rebaixo frontal & 1.467 & 3,91 & 6,36 & 7,11 & Centur 30D \\ \hline
+Fresamento dos dentes (desbaste) & – & 0,47 & 0,87 & 5,50 & UWF 5 \\ \hline
+Fresamento dos rasgos (desbaste) & – & 6,27 & 10,19 & 18,50 & D 800 \\ \hline
+Brochamento & 18.853 & 0,94 & 1,75 & – & Prensa \\ \hline
+Retificação plana & – & 1,60 & 2,77 & 4,00 & HFS 3063 \\ \hline
+Retificação interna & – & 1,00 & 1,62 & – & S121 \\ \hline
+\end{tabular}}
+\fonte{Elaborado pelos autores.}
+\end{table}
+
+
+Todas as operações ficaram dentro da capacidade das máquinas. No torno, a mais exigente é o torneamento externo de desbaste, que usa 134 N$\cdot$m dos 140 N$\cdot$m disponíveis; no rebaixo frontal, o avanço de 0,07 mm mantém o torque em 125 N$\cdot$m mesmo no mergulho de maior diâmetro. No centro de usinagem, o desbaste dos rasgos exige 10,2 kW, pouco mais da metade da potência do motor. Para o brochamento, a força total, já com o acréscimo de desgaste, é de 2,5 tf, e por isso foi especificada prensa de pelo menos 5 tf. Na retificação interna, o eixo porta-rebolo deve fornecer ao menos 1,6 kW.
+

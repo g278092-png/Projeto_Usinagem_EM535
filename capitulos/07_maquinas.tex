@@ -1,0 +1,26 @@
+% Capítulo 7 – gerado a partir do relatório; edite livremente
+\chapter{MÁQUINAS-FERRAMENTAS}
+
+As máquinas foram escolhidas pela capacidade dimensional, pela faixa de rotações e avanços e pela potência disponível. O Quadro~\ref{quad:maq} reúne os dados de catálogo usados na verificação.
+
+
+\begin{quadro}[H]
+\centering
+\caption{Máquinas-ferramentas selecionadas}\label{quad:maq}
+{\small\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.1562\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1922\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.3964\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.2402\linewidth-2\tabcolsep\relax}|}
+\hline
+\rowcolor{cinza} \textbf{Processo} & \textbf{Máquina} & \textbf{Dados de catálogo} & \textbf{Uso no projeto} \\ \hline
+Torneamento e furação (20 e 30) & ROMI Centur 30D, torno CNC com cabeçote A2-6\textquotedbl{} & Motor de 9 kW (12,5 cv); torque de 140 N$\cdot$m; 3 a 3.000 rpm; diâmetro admissível sobre o carro de 200 mm; torre de 8 posições para haste 25 $\times$ 25 mm e Ø25 mm & Peça de Ø160; potência máxima exigida de 8,3 kW (furação) \\ \hline
+Fresamento dos dentes (40) & KNUTH UWF 5, fresadora universal, com cabeçote divisor KNUTH UT & Eixo horizontal de 60 a 1.800 rpm e 5,5 kW; avanço da mesa de 30 a 750 mm/min; árvores de Ø27 e Ø32 mm; divisor 40:1 com altura de centro de 132,7 mm & 0,9 kW a 60 rpm; avanço de 40 mm/min \\ \hline
+Fresamento dos rasgos (50) & ROMI D 800, centro de usinagem vertical & Cone ISO 40; 10 a 10.000 rpm; 18,5 kW; torque de 118 N$\cdot$m; cursos de 800 $\times$ 610 $\times$ 640 mm & 10,2 kW a 5.471 rpm \\ \hline
+Brochamento (60) & Prensa hidráulica de coluna & Capacidade mínima de 5 tf e curso de 350 mm & Força estimada de 2,5 tf \\ \hline
+Retificação plana (90) & KNUTH HFS 3063 F Advance & Mesa magnética de 600 $\times$ 300 mm; rebolo de 350 $\times$ 40 $\times$ 127 mm a 1.450 rpm; 4 kW; mesa de 7 a 23 m/min; avanço transversal de 0,1 a 8 mm; desmagnetizador & 2,8 kW \\ \hline
+Retificação interna (100) & STUDER S121 & Peça até Ø360 mm; retificação interna até 175 mm de comprimento; eixos internos de 6.000 a 120.000 rpm; cabeçote-peça de 1 a 1.500 rpm & Rebolo a 28.650 rpm; 1,6 kW \\ \hline
+\end{tabular}}
+\fonte{ROMI (2022, 2025), Knuth (2026), Studer (2026).}
+\end{quadro}
+
+
+O Centur 30D é a máquina usada como exemplo nas aulas e atende à exigência de porta-ferramenta de 25 $\times$ 25 mm com torre dianteira. Com uma peça de Ø160 mm, porém, ele trabalha perto do limite de torque, o que obrigou a reduzir os avanços de desbaste. O modelo Centur 35D, de 11 kW e 320 N$\cdot$m, com a mesma seção de ferramenta, permitiria usar os valores nominais de catálogo e reduziria o tempo de torneamento.
+

@@ -1,14 +1,125 @@
-\documentclass{article}
-\usepackage{graphicx} % Required for inserting images
+\documentclass[12pt,a4paper,oneside]{report}
 
-\title{Projeto_Usinagem_EM535}
-\author{g278092 }
-\date{October 2026}
+% ---------------------------------------------------------------- pacotes
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{newtxtext,newtxmath}
+\usepackage{icomma}                 % vírgula decimal em equações
+\usepackage[a4paper,left=3cm,top=3cm,right=2cm,bottom=2cm]{geometry}
+\usepackage{setspace}
+\usepackage{indentfirst}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage{pdflscape}
+\usepackage{caption}
+\usepackage{newfloat}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+% ---------------------------------------------------------------- formatação (ABNT)
+\onehalfspacing
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{3pt}
+\definecolor{cinza}{gray}{0.9}
+\counterwithout{equation}{chapter}
+\setlist{nosep,leftmargin=1.2cm}
+
+\DeclareFloatingEnvironment[fileext=loq,listname={Lista de quadros},name=Quadro,within=chapter]{quadro}
+\captionsetup{labelsep=endash,font=small,justification=centering,skip=4pt}
+\newcommand{\fonte}[1]{\par\vspace{2pt}{\footnotesize\raggedright Fonte: #1\par}}
+
+\addto\captionsbrazil{%
+  \renewcommand{\contentsname}{Sumário}%
+  \renewcommand{\listfigurename}{Lista de ilustrações}%
+  \renewcommand{\listtablename}{Lista de tabelas}%
+  \renewcommand{\bibname}{Referências}}
+
+\titleformat{\chapter}{\normalfont\normalsize\bfseries}{\thechapter}{0.6em}{\MakeUppercase}
+\titleformat{name=\chapter,numberless}{\normalfont\normalsize\bfseries\centering}{}{0pt}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{0pt}{18pt}
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalfont\normalsize\itshape}{\thesubsection}{0.6em}{}
+\titlespacing*{\section}{0pt}{12pt}{6pt}
+\titlespacing*{\subsection}{0pt}{10pt}{4pt}
+
+\fancypagestyle{abnt}{\fancyhf{}\fancyhead[R]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[R]{\small\thepage}\renewcommand{\headrulewidth}{0pt}}
+
+% ---------------------------------------------------------------- dados do trabalho
+\newcommand{\grupo}{Grupo X}
+\newcommand{\autorA}{NOME COMPLETO -- RA}
+\newcommand{\autorB}{NOME COMPLETO -- RA}
+\newcommand{\autorC}{NOME COMPLETO -- RA}
 
 \begin{document}
+\pagenumbering{arabic}
 
-\maketitle
+% ---------------------------------------------------------------- capa
+\begin{titlepage}
+\centering
+{\large\bfseries UNIVERSIDADE ESTADUAL DE CAMPINAS\par}
+\vspace{4pt}
+{\bfseries Faculdade de Engenharia Mecânica\par}
+\vfill
+{\LARGE\bfseries Projeto de Usinagem -- \grupo\par}
+\vspace{12pt}
+Planejamento da fabricação de uma engrenagem cilíndrica de dentes retos\par
+\vfill
+\autorA\par \autorB\par \autorC\par
+\vfill
+CAMPINAS\par 2026\par
+\end{titlepage}
 
-\section{Introduction}
+% ---------------------------------------------------------------- folha de rosto
+\thispagestyle{empty}
+\begin{center}
+EM535A -- Usinagem dos Materiais\par
+\vspace*{\fill}
+{\Large\bfseries Projeto de Usinagem -- \grupo\par}
+\vspace*{\fill}
+\end{center}
+\hfill\begin{minipage}{0.5\textwidth}
+\singlespacing\small
+Trabalho apresentado à Faculdade de Engenharia Mecânica da Universidade Estadual de Campinas como parte dos
+requisitos exigidos para a obtenção de nota na disciplina EM535A.
+\end{minipage}
+\vspace*{\fill}
+
+\noindent Docente: Profa. Dra. Milla Caroline Gomes
+\vspace*{\fill}
+\begin{center}CAMPINAS\\2026\end{center}
+\newpage
+
+% ---------------------------------------------------------------- listas e sumário
+\pagestyle{empty}
+{\singlespacing
+\listoffigures\thispagestyle{empty}\clearpage
+\listofquadros\thispagestyle{empty}\clearpage
+\listoftables\thispagestyle{empty}\clearpage
+\tableofcontents\thispagestyle{empty}\clearpage}
+
+% ---------------------------------------------------------------- texto
+\pagestyle{abnt}
+\input{capitulos/01_introducao}
+\input{capitulos/02_caracterizacao}
+\input{capitulos/03_plano_de_trabalho}
+\input{capitulos/04_ferramentas}
+\input{capitulos/05_parametros}
+\input{capitulos/06_potencias}
+\input{capitulos/07_maquinas}
+\input{capitulos/08_tempos}
+\input{capitulos/09_folha_de_processo}
+\input{capitulos/10_conclusoes}
+
+{\singlespacing\setlength{\parskip}{8pt}
+\input{capitulos/referencias}}
 
 \end{document}
