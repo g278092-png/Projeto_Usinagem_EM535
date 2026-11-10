@@ -1,26 +1,146 @@
-% Capítulo 7 – gerado a partir do relatório; edite livremente
+
+
+% CONFERIR no catálogo antes de entregar (marcados com "CONFERIR"):
+%  - torque de 320 N.m e rotação de 3.000 rpm do Centur 35D
+%  - diâmetro/curso das castanhas da placa do Centur 35D
+%  - profundidade final do rasgo com 3 passes e 2 calços na BM25
+
 \chapter{MÁQUINAS-FERRAMENTAS}
 
-As máquinas foram escolhidas pela capacidade dimensional, pela faixa de rotações e avanços e pela potência disponível. O Quadro~\ref{quad:maq} reúne os dados de catálogo usados na verificação.
+As máquinas foram escolhidas comparando, para cada processo, as alternativas dos catálogos e verificando a capacidade dimensional, a faixa de rotações e avanços e a potência e o torque exigidos no Capítulo 6. Como critério, nenhuma operação deve exigir mais de 90\,\% da potência disponível, já incluídos o acréscimo de 30\,\% por desgaste e o rendimento da máquina (Equação 10). O limite é menor que 100\,\% porque as potências dos tornos ROMI são nominais em regime S6 -- 40\,\% (ROMI, 2022), isto é, valem para carga intermitente, e porque, em baixa rotação, a potência fica limitada pelo torque (Equação 11).
 
+\section{Torneamento e furação (operações 20 e 30)}
 
-\begin{quadro}[H]
+A peça tem Ø160\,mm e o porta-ferramenta externo deve ser de 25 $\times$ 25\,mm, com torre dianteira. Na linha Centur da ROMI, os modelos 30D e 35D atendem a essas condições: ambos aceitam hastes de 25 $\times$ 25\,mm e de Ø25\,mm e têm diâmetro admissível sobre o carro maior que 160\,mm (Tabela~\ref{tab:cmp-torno}).
+
+\begin{table}[htb]
 \centering
-\caption{Máquinas-ferramentas selecionadas}\label{quad:maq}
-{\small\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.1562\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1922\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.3964\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.2402\linewidth-2\tabcolsep\relax}|}
+\caption{Comparação entre os tornos candidatos}
+\label{tab:cmp-torno}
+\small
+\begin{tabular}{p{5.6cm}p{4.4cm}p{4.4cm}}
 \hline
-\rowcolor{cinza} \textbf{Processo} & \textbf{Máquina} & \textbf{Dados de catálogo} & \textbf{Uso no projeto} \\ \hline
-Torneamento e furação (20 e 30) & ROMI Centur 30D, torno CNC com cabeçote A2-6\textquotedbl{} & Motor de 9 kW (12,5 cv); torque de 140 N$\cdot$m; 3 a 3.000 rpm; diâmetro admissível sobre o carro de 200 mm; torre de 8 posições para haste 25 $\times$ 25 mm e Ø25 mm & Peça de Ø160; potência máxima exigida de 8,3 kW (furação) \\ \hline
-Fresamento dos dentes (40) & KNUTH UWF 5, fresadora universal, com cabeçote divisor KNUTH UT & Eixo horizontal de 60 a 1.800 rpm e 5,5 kW; avanço da mesa de 30 a 750 mm/min; árvores de Ø27 e Ø32 mm; divisor 40:1 com altura de centro de 132,7 mm & 0,9 kW a 60 rpm; avanço de 40 mm/min \\ \hline
-Fresamento dos rasgos (50) & ROMI D 800, centro de usinagem vertical & Cone ISO 40; 10 a 10.000 rpm; 18,5 kW; torque de 118 N$\cdot$m; cursos de 800 $\times$ 610 $\times$ 640 mm & 10,2 kW a 5.471 rpm \\ \hline
-Brochamento (60) & Prensa hidráulica de coluna & Capacidade mínima de 5 tf e curso de 350 mm & Força estimada de 2,5 tf \\ \hline
-Retificação plana (90) & KNUTH HFS 3063 F Advance & Mesa magnética de 600 $\times$ 300 mm; rebolo de 350 $\times$ 40 $\times$ 127 mm a 1.450 rpm; 4 kW; mesa de 7 a 23 m/min; avanço transversal de 0,1 a 8 mm; desmagnetizador & 2,8 kW \\ \hline
-Retificação interna (100) & STUDER S121 & Peça até Ø360 mm; retificação interna até 175 mm de comprimento; eixos internos de 6.000 a 120.000 rpm; cabeçote-peça de 1 a 1.500 rpm & Rebolo a 28.650 rpm; 1,6 kW \\ \hline
-\end{tabular}}
-\fonte{ROMI (2022, 2025), Knuth (2026), Studer (2026).}
+\textbf{Característica} & \textbf{ROMI Centur 30D} & \textbf{ROMI Centur 35D} \\
+\hline
+Motor principal (regime S6 -- 40\,\%) & 9 kW (12,5 cv) & 11 kW (15 cv) \\
+Torque máximo & 140 N$\cdot$m & 320 N$\cdot$m \\
+Rotação & 3 a 3.000 rpm & 3 a 3.000 rpm \\
+Diâmetro admissível sobre o carro & 200 mm & 255 mm \\
+Haste das ferramentas & 25 $\times$ 25 mm e Ø25 mm & 25 $\times$ 25 mm e Ø25 mm \\
+Avanço de desbaste adotado & 0,22 mm/volta & 0,28 mm/volta \\
+Maior utilização de potência & 95\,\% (torneamento de desbaste) & 86\,\% (faceamento e rebaixo) \\
+Maior torque exigido & 134 N$\cdot$m (96\,\% do máximo) & 187 N$\cdot$m (58\,\% do máximo) \\
+Tempo de corte no torno por peça & 12,3 min & 9,2 min \\
+Usado como exemplo nas aulas & sim & não \\
+\hline
+\end{tabular}
+\par\small Fonte: ROMI (2022) e cálculos do grupo (Capítulos 6 e 8).
+\end{table}
+
+O Centur 30D, usado nas aulas, foi a primeira opção. Porém, mesmo com o avanço de desbaste reduzido para 0,22\,mm/volta, ele trabalha a 95\,\% da potência e a 96\,\% do torque no torneamento de desbaste, acima do critério de 90\,\%. Como o motor de 9\,kW é nominal em regime S6 -- 40\,\%, a margem real é menor que a aparente. O Centur 35D, da mesma família, elimina essa falta de margem. Com ele, o avanço de desbaste sobe de 0,22 para 0,28\,mm/volta (o valor de catálogo é 0,30) e o do rebaixo frontal, de 0,07 para 0,12\,mm/volta, e todas as operações ficam abaixo de 90\,\% da potência e de 60\,\% do torque (Tabela~\ref{tab:par-35d}).
+
+\begin{table}[htb]
+\centering
+\caption{Parâmetros e potências no torno Centur 35D}
+\label{tab:par-35d}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{4.3cm}cccccccc}
+\hline
+\textbf{Operação} & \textbf{f} & \textbf{v$_c$} & \textbf{n} & \textbf{F$_c$} & \textbf{P$_m$} & \textbf{P$_{disp}$} & \textbf{Util.} & \textbf{T} \\
+ & (mm) & (m/min) & (rpm) & (N) & (kW) & (kW) & (\%) & (N$\cdot$m) \\
+\hline
+Faceamento de desbaste (por passe) & 0,28 & 300 & 597 & 1.168 & 9,49 & 11,0 & 86 & 152 \\
+Torneamento externo de desbaste & 0,28 & 280 & 557 & 1.229 & 9,32 & 11,0 & 85 & 160 \\
+Degrau do aro & 0,28 & 300 & 608 & 942 & 7,66 & 11,0 & 70 & 120 \\
+Acabamento & 0,15 & 400 & 811 & 258 & 2,80 & 11,0 & 25 & 33 \\
+Furação Ø23 & 0,09 & 150 & 2.076 & --- & 8,26 & 11,0 & 75 & 38 \\
+Mandrilamento Ø24,5 & 0,10 & 231 & 3.000 & 287 & 1,79 & 11,0 & 16 & 6 \\
+Rebaixo frontal & 0,12 & 160 & 485 & 2.188 & 9,48 & 11,0 & 86 & 187 \\
+\hline
+\end{tabular}
+\par\small Fonte: Elaborado pelos autores, com as Equações (7) a (12).
+\end{table}
+
+Os valores nominais completos de catálogo continuam inviáveis mesmo no 35D: o torneamento de desbaste exigiria 11,7\,kW (Tabela 5.1) e a furação, 14,5\,kW, ambos acima dos 11\,kW disponíveis. Por isso a furação foi mantida com f = 0,09\,mm/volta e v$_c$ = 150\,m/min, e a velocidade do rebaixo foi limitada a 160\,m/min.
+
+O ganho de produtividade é pequeno: o tempo de corte no torno cai de 12,3 para 9,2\,min por peça, cerca de 3\,min em 122. A razão da escolha do Centur 35D é, portanto, a margem de potência e de torque, e não o tempo de usinagem.
+
+\section{Fresamento dos dentes (operação 40)}
+
+Para os dentes foram comparadas as duas alternativas descritas na Seção 3.4 (Tabela~\ref{tab:cmp-dentes}).
+
+\begin{table}[htb]
+\centering
+\caption{Comparação entre as máquinas para o fresamento dos dentes}
+\label{tab:cmp-dentes}
+\small
+\begin{tabular}{p{3.6cm}p{5.3cm}p{5.3cm}}
+\hline
+\textbf{Critério} & \textbf{KNUTH UWF 5 com divisor UT} & \textbf{LIEBHERR LC 180} \\
+\hline
+Processo e ferramenta & Fresamento com fresa de disco de módulo 6 nº 4, aço rápido & Geração com fresa caracol Ø100 mm \\
+Tempo de corte dos 24 dentes & 104,7 min & cerca de 2 min \\
+Potência exigida / disponível & 0,87 kW / 5,5 kW (16\,\%) & não calculada \\
+Perfil do dente & exato apenas para 21 dentes (fresa nº 4 cobre 21 a 25) & gerado, exato para qualquer número de dentes \\
+Divisão & manual, 15$^\circ$ por vão (uma volta e 12 furos do disco de 18) & contínua, por geração \\
+Limites da máquina & árvore de Ø32 mm compatível com a fresa & peças até Ø180 mm e módulo até 6 (módulo 6 no limite) \\
+Máquina e ferramental & máquina comum de ferramentaria e fresa de jogo padrão & máquina dedicada e fresa caracol específica \\
+\hline
+\end{tabular}
+\par\small Fonte: Knuth (2026), Liebherr (2026), ZPS-FN (2026) e cálculos do grupo.
+\end{table}
+
+Foi mantida a fresadora universal KNUTH UWF 5 com divisor UT, pela disponibilidade em ferramentaria e pelo custo de ferramental para um lote de 10 peças, e porque a qualidade adotada para os dentes (DIN 3962, qualidade 9 a 10) é compatível com a fresa de disco. O custo dessa escolha é o tempo: o fresamento dos dentes responde por 105 dos cerca de 119 min de corte por peça. Para lotes maiores, a LIEBHERR LC 180 reduziria esse tempo em duas ordens de grandeza e geraria o perfil exato, e a decisão deveria ser revista.
+
+\section{Fresamento dos rasgos em arco (operação 50)}
+
+Os rasgos são fresados no centro de usinagem vertical ROMI D 800, que tem cone ISO 40 e faixa de 10 a 10.000 rpm, e cobre os 5.471\,rpm da fresa de Ø16\,mm com haste cilíndrica. O centro de usinagem é necessário porque a trajetória combina rampa, desbaste em três níveis e contorno de acabamento com o programa CNC. A potência exigida no desbaste é de 10,2\,kW, 55\,\% dos 18,5\,kW do motor.
+
+\section{Brochamento do rasgo de chaveta (operação 60)}
+
+Uma prensa hidráulica de oficina não atende a esta operação. As prensas de 10 a 100\,tf consultadas em catálogos comerciais têm curso de pistão de 120 a 150\,mm, e o percurso da brocha na peça é de cerca de 340\,mm. Foi escolhida então a brochadeira vertical BM25 da Prada Nargesa, projetada para rasgos de chaveta com bucha-guia e calços, com os dados abaixo (Prada Nargesa, 2026):
+
+\begin{itemize}
+\item força hidráulica de 10\,tf, contra 2,5\,tf exigidas (25\,\%);
+\item deslocamento do êmbolo de 600\,mm, contra cerca de 340\,mm necessários (57\,\%);
+\item velocidade de trabalho de 24\,mm/s (1,44\,m/min) e de retorno de 54\,mm/s;
+\item motor de 2,2\,kW, contra 0,84\,kW exigidos (38\,\%): P$_c$ = 18.853\,N $\times$ 0,024\,m/s = 0,45\,kW e P$_m$ = 1,3 $\times$ 0,45\,/\,0,70 = 0,84\,kW;
+\item diâmetro máximo da peça de 600\,mm e mesa de 420 $\times$ 420\,mm, suficientes para a peça de Ø156\,mm.
+\end{itemize}
+
+O mesmo catálogo traz a brocha de 8\,mm da série C (referência 125-09-01-BR-00008, de 9,52 $\times$ 298,45\,mm, tolerância JS9). Ela admite comprimento de corte de até 63,5\,mm, maior que os 51,3\,mm do cubo, e exige 1,67\,tf, valor coerente com os 1,9\,tf calculados por Kienzle sem o acréscimo de desgaste. O fabricante prescreve três passes com dois calços de 1,27\,mm. A bucha-guia padrão da série é de Ø24 ou Ø25\,mm, com 63,5\,mm de comprimento; como o furo está em Ø24,5\,mm nesta etapa, a bucha é de Ø24,5\,mm, sob encomenda, pois o fabricante atende dimensões especiais. Com três passes de 340\,mm a 1,44\,m/min, o tempo de avanço calculado é de 0,71\,min, sem os retornos e o manuseio da brocha e dos calços. O manual informa 2\,min\,30\,s como tempo de brochamento de referência para a brocha de 8\,mm.
+
+% CONFERIR: se o fabricante da brocha confirma que 3 passes com 2 calços de 1,27 mm
+% levam o fundo do rasgo a 16 mm do eixo (testar em peça de ensaio).
+
+\section{Retificação (operações 90 e 100)}
+
+Na retificação plana, a KNUTH HFS 3063 F Advance atende com folga: a mesa de 600 $\times$ 300\,mm comporta a peça, o rebolo de 350 $\times$ 40 $\times$ 127\,mm a 1.450\,rpm dá 26,6\,m/s, a velocidade da mesa (7 a 23\,m/min) cobre os 15\,m/min adotados, o avanço transversal vai até 8\,mm e a potência exigida, de 2,8\,kW, é 69\,\% dos 4\,kW do motor. Na retificação interna, a STUDER S121 cobre a rotação do rebolo de Ø20\,mm (28.650\,rpm, dentro dos 6.000 a 120.000\,rpm dos eixos internos) e a do cabeçote-peça (382\,rpm, dentro de 1 a 1.500\,rpm), com peça de até Ø360\,mm.
+
+\section{Resumo da seleção}
+
+O Quadro~\ref{qua:maquinas} reúne as máquinas selecionadas e a utilização de cada uma.
+
+\begin{quadro}[htb]
+\centering
+\caption{Máquinas-ferramentas selecionadas}
+\label{qua:maquinas}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.9cm}p{2.9cm}p{5.3cm}p{3.2cm}p{2.3cm}}
+\hline
+\textbf{Op.} & \textbf{Máquina} & \textbf{Dados de catálogo} & \textbf{Exigido} & \textbf{Utilização} \\
+\hline
+20 e 30 & ROMI Centur 35D & Motor de 11 kW (S6 -- 40\,\%); torque de 320 N$\cdot$m; 3 a 3.000 rpm; Ø255 mm sobre o carro; hastes de 25 $\times$ 25 mm e Ø25 mm & 9,5 kW e 187 N$\cdot$m (operação mais exigente) & 86\,\% da potência; 58\,\% do torque \\
+40 & KNUTH UWF 5 com divisor UT & Eixo horizontal de 60 a 1.800 rpm e 5,5 kW; mesa de 30 a 750 mm/min; árvores de Ø27 e Ø32 mm; divisor 40:1 & 0,87 kW a 60 rpm; 40 mm/min & 16\,\% \\
+50 & ROMI D 800 & Cone ISO 40; 10 a 10.000 rpm; 18,5 kW; 118 N$\cdot$m; cursos de 800 $\times$ 610 $\times$ 640 mm & 10,2 kW a 5.471 rpm & 55\,\% \\
+60 & Prada Nargesa BM25 & 10 tf; êmbolo de 600 mm; 24 mm/s; motor de 2,2 kW; mesa de 420 $\times$ 420 mm & 2,5 tf; 340 mm; 0,84 kW & 25\,\% (força); 57\,\% (curso); 38\,\% (potência) \\
+90 & KNUTH HFS 3063 F Advance & Mesa magnética de 600 $\times$ 300 mm; rebolo de 350 $\times$ 40 $\times$ 127 mm a 1.450 rpm; 4 kW; mesa de 7 a 23 m/min & 2,8 kW & 69\,\% \\
+100 & STUDER S121 & Peça até Ø360 mm; eixos internos de 6.000 a 120.000 rpm; cabeçote-peça de 1 a 1.500 rpm & 1,6 kW no eixo do rebolo, 28.650 rpm & potência do eixo não consta nos dados consultados \\
+\hline
+\end{tabular}
+\par\small Fonte: ROMI (2022, 2025), Knuth (2026), Prada Nargesa (2026), Studer (2026).
 \end{quadro}
 
-
-O Centur 30D é a máquina usada como exemplo nas aulas e atende à exigência de porta-ferramenta de 25 $\times$ 25 mm com torre dianteira. Com uma peça de Ø160 mm, porém, ele trabalha perto do limite de torque, o que obrigou a reduzir os avanços de desbaste. O modelo Centur 35D, de 11 kW e 320 N$\cdot$m, com a mesma seção de ferramenta, permitiria usar os valores nominais de catálogo e reduziria o tempo de torneamento.
 

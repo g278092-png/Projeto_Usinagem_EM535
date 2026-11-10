@@ -1,4 +1,4 @@
-% Capítulo 6 – gerado a partir do relatório; edite livremente
+
 \chapter{POTÊNCIAS DE CORTE}
 
 \section{Metodologia}
@@ -25,11 +25,11 @@ com F\textsubscript{c} em N, v\textsubscript{c} em m/min e P\textsubscript{c} em
   P_{m} = \frac{1,3 \cdot P_{c}}{\eta}
 \end{equation}
 
-No torno, a potência disponível depende da rotação, pois abaixo de cerca de 600 rpm o motor fica limitado pelo torque máximo:
+No modelo adotado, a potência disponível a cada rotação é limitada pela potência nominal e pelo torque máximo. Para o Centur 35D, usam-se $P_{\rm nom}=11$ kW e $T_{\max}=320$ N$\cdot$m. Na comparação com o Centur 30D, usam-se 9 kW e 140 N$\cdot$m, respectivamente. Com $n$ em rpm, a potência em kW é dada por
 
 
 \begin{equation}\label{eq:pdisp}
-  P_{\text{disp}} = \min \left( 9; \frac{140 \cdot 2 \pi \cdot n}{60 \cdot 10^{3}} \right)
+  P_{\text{disp}} = \min \left( P_{\rm nom}; \frac{T_{\max} \cdot 2 \pi \cdot n}{60 \cdot 10^{3}} \right)
 \end{equation}
 
 Na furação, cada ponto da aresta é cortado uma vez por volta, com espessura h = f$\cdot$sen $\chi$\textsubscript{r}, e a força de corte atua, em média, a um quarto do diâmetro D da broca. Com isso, a potência fica:
@@ -73,18 +73,18 @@ Para a retificação foi usada a energia específica de retificação u, da orde
 
 \section{Resultados}
 
-Para o faceamento de desbaste, com f = 0,22 mm, a\textsubscript{p} = 1,425 mm e $\chi$\textsubscript{r} = 95°, as Equações \eqref{eq:hb} a \eqref{eq:pm} dão:
+Para o faceamento de desbaste no Centur 35D, com f = 0,28 mm/volta, a\textsubscript{p} = 1,425 mm e $\chi$\textsubscript{r} = 95°, as Equações \eqref{eq:hb} a \eqref{eq:pm} dão:
 
 
 \[
-  F_{c} = 2100 \cdot 0,219^{0,74} \cdot 1,43 = 977 \ \text{N}
+  F_{c} = 2100 \cdot 0,279^{0,74} \cdot 1,43 \approx 1168 \ \text{N}
 \]
 
 \[
-  P_{c} = \frac{977 \cdot 300}{60 \cdot 10^{3}} = 4,88 \ \text{kW} \quad P_{m} = \frac{1,3 \cdot 4,88}{0,80} = 7,94 \ \text{kW}
+  P_{c} = \frac{1168 \cdot 300}{60 \cdot 10^{3}} = 5,84 \ \text{kW} \quad P_{m} = \frac{1,3 \cdot 5,84}{0,80} = 9,49 \ \text{kW}
 \]
 
-A 597 rpm o motor dispõe de 8,75 kW (Equação \eqref{eq:pdisp}), e o torque exigido, de 127 N$\cdot$m, fica abaixo do limite de 140 N$\cdot$m. As demais operações foram calculadas da mesma forma, e os resultados estão na Tabela~\ref{tab:pot}.
+A 597 rpm, a potência disponível no Centur 35D é de 11,0 kW (Equação \eqref{eq:pdisp}), e o torque exigido, de 152 N$\cdot$m, fica abaixo do limite de 320 N$\cdot$m. As demais operações foram calculadas da mesma forma, e os resultados estão na Tabela~\ref{tab:pot}.
 
 
 \begin{table}[H]
@@ -94,22 +94,22 @@ A 597 rpm o motor dispõe de 8,75 kW (Equação \eqref{eq:pdisp}), e o torque ex
 \begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.3513\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1631\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1506\linewidth-2\tabcolsep\relax}|}
 \hline
 \rowcolor{cinza} \textbf{Operação} & \textbf{F\textsubscript{c} (N)} & \textbf{P\textsubscript{c} (kW)} & \textbf{P\textsubscript{m} (kW)} & \textbf{Potência disponível (kW)} & \textbf{Máquina} \\ \hline
-Faceamento de desbaste (por passe) & 977 & 4,88 & 7,94 & 8,75 & Centur 30D \\ \hline
-Torneamento externo de desbaste & 1.028 & 4,80 & 7,80 & 8,17 & Centur 30D \\ \hline
-Degrau do aro & 788 & 3,94 & 6,41 & 8,92 & Centur 30D \\ \hline
-Acabamento & 258 & 1,72 & 2,80 & 9,00 & Centur 30D \\ \hline
-Furação Ø23 & – & 5,08 & 8,26 & 9,00 & Centur 30D \\ \hline
-Mandrilamento & 287 & 1,10 & 1,79 & 9,00 & Centur 30D \\ \hline
-Rebaixo frontal & 1.467 & 3,91 & 6,36 & 7,11 & Centur 30D \\ \hline
+Faceamento de desbaste (por passe) & 1.168&  5,84& 9,49&  11,0& Centur 35D\\ \hline
+Torneamento externo de desbaste & 1.229 & 5,74& 9,32& 11,0& Centur 35D\\ \hline
+Degrau do aro & 942& 4,71&  7,66& 11,0& Centur 35D\\ \hline
+Acabamento & 258 & 1,72 & 2,80 & 11,0& Centur 35D\\ \hline
+Furação Ø23 & – & 5,08 & 8,26 & 11,0& Centur 35D\\ \hline
+Mandrilamento & 287 & 1,10 & 1,79 & 11,0& Centur 35D\\ \hline
+Rebaixo frontal & 2.188& 5,83& 9,48& 11,0& Centur 35D\\ \hline
 Fresamento dos dentes (desbaste) & – & 0,47 & 0,87 & 5,50 & UWF 5 \\ \hline
 Fresamento dos rasgos (desbaste) & – & 6,27 & 10,19 & 18,50 & D 800 \\ \hline
-Brochamento & 18.853 & 0,94 & 1,75 & – & Prensa \\ \hline
+Brochamento & 18.853 & 0,45&  0,84& 2,2& BM25\\ \hline
 Retificação plana & – & 1,60 & 2,77 & 4,00 & HFS 3063 \\ \hline
 Retificação interna & – & 1,00 & 1,62 & – & S121 \\ \hline
 \end{tabular}}
-\fonte{Elaborado pelos autores.}
+\fonte{Elaborado pelo grupo.}
 \end{table}
 
 
-Todas as operações ficaram dentro da capacidade das máquinas. No torno, a mais exigente é o torneamento externo de desbaste, que usa 134 N$\cdot$m dos 140 N$\cdot$m disponíveis; no rebaixo frontal, o avanço de 0,07 mm mantém o torque em 125 N$\cdot$m mesmo no mergulho de maior diâmetro. No centro de usinagem, o desbaste dos rasgos exige 10,2 kW, pouco mais da metade da potência do motor. Para o brochamento, a força total, já com o acréscimo de desgaste, é de 2,5 tf, e por isso foi especificada prensa de pelo menos 5 tf. Na retificação interna, o eixo porta-rebolo deve fornecer ao menos 1,6 kW.
+Todas as operações ficaram dentro da capacidade das máquinas. No torno, a operação mais exigente no torno é o rebaixo (187 de 320 N.m); brochamento 2,5 tf em máquina de 10 tf; retificação interna pede 1,6 kW no eixo.
 
