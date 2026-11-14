@@ -1,70 +1,210 @@
-
 \chapter{ESCOLHA DAS FERRAMENTAS}
 
-As ferramentas foram escolhidas nos catálogos dos fabricantes considerando o material da peça (grupo P2.1), a operação e a máquina. Como o porta-ferramenta externo deve ter seção de 25 $\times$ 25 mm e a torre do torno é dianteira, todos os suportes de torneamento externo têm haste de 25 $\times$ 25 mm e são da versão à direita (R).
+\section{Critérios de escolha}
 
+As ferramentas foram escolhidas em catálogos comerciais seguindo a ordem da Aula 10 (ver também DINIZ; MARCONDES; COPPINI, 2014): material da peça e grupo ISO; tipo de operação (desbaste ou acabamento); geometria da pastilha e do quebra-cavaco; classe do metal duro; porta-ferramenta; dados de corte de partida; ajuste pela potência e pelo torque da máquina; e, no acabamento, verificação da rugosidade teórica. Três condições valem para todas as ferramentas:
 
-\section{Torneamento externo}
+\begin{itemize}
+\item \textbf{Material.} O SAE 8620 recozido é do grupo ISO P (cor azul), subgrupo P2.1 da Sandvik Coromant (aço baixa liga recozido, 175 HB). Por isso as classes escolhidas são classes P: no torneamento, a 4425, de metal duro com cobertura CVD (TiCN + Al\textsubscript{2}O\textsubscript{3} + TiN), que fica no meio da faixa P (P15 a P35) e equilibra tenacidade, para remover a casca de laminação, e resistência ao desgaste (Aulas 7 a 10).
+\item \textbf{Versão da ferramenta.} O enunciado fixa porta-ferramenta externo de 25 $\times$ 25 mm e torre dianteira. Segundo a Aula 10 (slide 8), em torre traseira usa-se ferramenta à direita (R) e em torre dianteira, ferramenta à esquerda (L); o exemplo resolvido da mesma aula, com torre dianteira, escolhe o porta-ferramenta DDJNL 2525M 11 (slide 37). Por isso todos os porta-ferramentas de torneamento, a ferramenta de canal frontal e a barra de mandrilar são da versão L. As pastilhas, a broca e as fresas não têm versão.
+\item \textbf{Fixação na torre.} No ROMI Centur 35D a torre recebe hastes quadradas de 25 $\times$ 25 mm e hastes cilíndricas de Ø32 mm (ROMI, 2022). A broca (haste Ø25) e a barra de mandrilar (haste Ø16) são montadas com buchas de redução da própria Sandvik Coromant.
+\end{itemize}
 
-Para o faceamento e o desbaste externo escolheu-se a pastilha CNMG 12 04 08-PM 4425 montada no porta-ferramenta PCLNR 2525M 12, ambos da Sandvik Coromant. O formato C, com ângulo de ponta de 80° e ângulo de posição de 95°, permite facear até o centro e tornear o diâmetro externo com a mesma aresta. Por ser negativa e de dupla face, a pastilha oferece quatro arestas e uma cunha robusta para remover a casca de laminação. O quebra-cavaco PM é indicado para usinagem média de aço, e a classe 4425, de metal duro com cobertura CVD de TiCN, Al\textsubscript{2}O\textsubscript{3} e TiN, é recomendada para aços. O significado de cada campo dos códigos está no Quadro~\ref{quad:iso}.
+Para cada ferramenta, a primeira vez que ela aparece traz a chave do código, com o significado de cada campo, a justificativa da escolha e os dados de corte de partida do fabricante. Os dados de corte são comparados com os valores adotados no Capítulo~\ref{cap:param}.
 
+% ------------------------------------------------------------------------------------------
+\section{T01 – Faceamento e torneamento externo de desbaste}
 
-\begin{quadro}[H]
+Para o faceamento e o desbaste externo escolheu-se a pastilha CNMG 12 04 08-PM 4425 no porta-ferramenta PCLNL 2525M 12 (Figura~\ref{fig:chaveT01}). O formato C, rômbico de 80°, montado com ângulo de posição de 95°, permite facear até o centro e tornear o diâmetro externo com a mesma aresta e gera o ressalto de 90° do degrau do aro. Por ser negativa e de dupla face, a pastilha tem quatro arestas e uma cunha robusta para remover a casca de laminação. A ponta de 80° é mais resistente que a de 55° e aceita o avanço de desbaste: pela regra da Aula 10 (slide 30), no desbaste f $\leq$ r\textsubscript{$\varepsilon$}/2 = 0,4 mm/volta, e o avanço adotado é de 0,28 mm/volta.
+
+\begin{figure}[H]
 \centering
-\caption{Significado dos códigos da pastilha e do porta-ferramenta de desbaste}\label{quad:iso}
-{\small\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.4925\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.4925\linewidth-2\tabcolsep\relax}|}
-\hline
-\rowcolor{cinza} \textbf{Pastilha CNMG 12 04 08-PM 4425} & \textbf{Porta-ferramenta PCLNR 2525M 12} \\ \hline
-C – formato rômbico de 80° & P – fixação por alavanca \\ \hline
-N – ângulo de folga de 0° (pastilha negativa) & C – formato da pastilha (80°) \\ \hline
-M – classe de tolerância & L – ângulo de posição de 95° \\ \hline
-G – furo cilíndrico e quebra-cavaco nas duas faces & N – pastilha com folga de 0° \\ \hline
-12 – tamanho nominal da pastilha & R – versão à direita \\ \hline
-04 – espessura de 4,76 mm & 25 $\times$ 25 – altura e largura da haste (mm) \\ \hline
-08 – raio de ponta de 0,8 mm & M – comprimento de 150 mm \\ \hline
-PM – quebra-cavaco para usinagem média de aço & 12 – tamanho da pastilha \\ \hline
-4425 – classe P25 com cobertura CVD &  \\ \hline
-\end{tabular}}
-\fonte{Sandvik Coromant (2026).}
-\end{quadro}
+\caption{Chave de código do conjunto T01}\label{fig:chaveT01}
+\chave{P/1, C/2, L/3, N/4, L/5, 25/6, 25/7, M/8, 12/9}\par\medskip
+\chave{C/1, N/2, M/3, G/4, 12/5, 04/6, 08/7, -/x, PM/8, 4425/9}
+\fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a) e na Aula 10.}
+\end{figure}
 
+\noindent Porta-ferramenta PCLNL 2525M 12 (ISO 5608):
+\begin{enumerate}[label=\arabic*:, leftmargin=1.6cm]
+\item P – fixação da pastilha por alavanca (pino no furo da pastilha);
+\item C – formato da pastilha: rômbica de 80°;
+\item L – estilo do suporte: ângulo de posição $\chi$\textsubscript{r} = 95°;
+\item N – ângulo de folga da pastilha de 0° (pastilha negativa);
+\item L – versão à esquerda, para torre dianteira;
+\item 25 – altura da haste, 25 mm;
+\item 25 – largura da haste, 25 mm (exigência do enunciado);
+\item M – comprimento funcional de 150 mm;
+\item 12 – tamanho da pastilha (aresta de 12 mm).
+\end{enumerate}
 
-Para o acabamento das faces e do Ø156 e para o chanfro do cubo foi escolhida a pastilha DNMG 15 06 04-PF 4425 no porta-ferramenta PDJNR 2525M 15. O formato D, de 55°, com ângulo de posição de 93° (letra J), alcança o canto entre o cubo e a face do aro, e o raio de ponta de 0,4 mm, com o quebra-cavaco PF de acabamento, dá rugosidade máxima teórica de 7 \textmu{}m com avanço de 0,15 mm/volta, conforme a Equação \eqref{eq:rmax}. Os demais campos seguem a mesma codificação do Quadro~\ref{quad:iso}: 15 indica o tamanho nominal da pastilha e 06 a espessura de 6,35 mm.
+\noindent Pastilha CNMG 12 04 08-PM 4425 (ISO 1832):
+\begin{enumerate}[label=\arabic*:, leftmargin=1.6cm]
+\item C – formato rômbico de 80°;
+\item N – ângulo de folga de 0°;
+\item M – classe de tolerância;
+\item G – furo cilíndrico e quebra-cavaco nas duas faces;
+\item 12 – comprimento da aresta, 12 mm (círculo inscrito de 12,7 mm);
+\item 04 – espessura de 4,76 mm;
+\item 08 – raio de ponta de 0,8 mm;
+\item PM – geometria Sandvik para usinagem média de aço;
+\item 4425 – classe de metal duro com cobertura CVD (TiCN + Al\textsubscript{2}O\textsubscript{3} + TiN), para o grupo P.
+\end{enumerate}
 
+Para o grupo P2.1, o fabricante indica como valores de partida a\textsubscript{p} = 3 mm (0,5 a 5,5), f = 0,3 mm/volta (0,15 a 0,5) e v\textsubscript{c} = 335 m/min (400 a 280) (SANDVIK COROMANT, 2026a).
 
-\section{Furação e mandrilamento}
+% ------------------------------------------------------------------------------------------
+\section{T02 – Acabamento externo}
 
-O furo é aberto com a broca de pastilhas intercambiáveis CoroDrill 880-D2300L25-03, de Ø23 mm, comprimento útil de três diâmetros (69 mm) e haste cilíndrica de Ø25 mm, que se fixa diretamente no suporte redondo da torre do torno. A broca usa dois insertos: o central, 880-04 03 05H-C-GM 1044, de classe tenaz com cobertura PVD, porque no centro da broca a velocidade de corte tende a zero; e o periférico, 880-04 03 W05H-P-GM 4334, com cobertura CVD e aresta alisadora, que é mais resistente ao desgaste. Como a ponta da broca é autocentrante, dispensa-se o furo de centro.
+Para o acabamento das faces, do Ø156, do Ø46 e do chanfro do cubo foi escolhida a pastilha DNMG 15 06 04-PF 4425 no porta-ferramenta PDJNL 2525M 15 (Figura~\ref{fig:chaveT02}). O formato D, de 55°, com ângulo de posição de 93°, permite seguir o contorno com mudanças de direção (Ø156, face do aro, Ø46, chanfro e face do cubo) em um único passe, porque a ponta mais aguda deixa folga para a aresta secundária nos trechos em que a ferramenta avança em direção à placa. O raio de ponta de 0,4 mm e o quebra-cavaco PF são próprios para acabamento. Com f = 0,15 mm/volta, a rugosidade máxima teórica (Aula 10, slide 30; Aula 12, slide 16) é
 
+\[
+  R_{\text{máx}} = \frac{f^{2}}{8 \cdot r_{\varepsilon}} = \frac{0,15^{2}}{8 \cdot 0,4} = 0,0070 \ \text{mm} = 7,0 \ \text{\textmu m}
+\]
 
-O mandrilamento é feito com a barra A16R-SDUCR 07-R e a pastilha DCMT 07 02 04-PF 4425. No código da barra, A indica barra de aço com refrigeração interna; 16, o diâmetro; R, o comprimento de 200 mm; S, a fixação por parafuso; D, a pastilha de 55°; U, o ângulo de posição de 93°; C, a folga de 7° da pastilha; e R, a versão à direita. A barra trabalha em furos a partir de 20 mm e admite balanço de até 64 mm, suficiente para atravessar os 55 mm da peça. A pastilha positiva (folga de 7°, letra C, e quebra-cavaco em uma face, letra T) reduz as forças e a tendência à vibração da barra.
+A Aula 12 (slide 17) lembra que a rugosidade real é maior que a teórica, por vibração, deformação e fluxo lateral do cavaco. Mesmo assim, esse valor é compatível com a especificação Ra 6,3 \textmu{}m das superfícies sem função de montagem, porque o Ra de um perfil teórico de torneamento é bem menor que o R\textsubscript{máx}. A outra condição da Aula 10 para o acabamento, a\textsubscript{p} $\geq$ r\textsubscript{$\varepsilon$}, também é atendida (0,5 $\geq$ 0,4 mm).
 
+\begin{figure}[H]
+\centering
+\caption{Chave de código do conjunto T02}\label{fig:chaveT02}
+\chave{P/1, D/2, J/3, N/4, L/5, 25/6, 25/7, M/8, 15/9}\par\medskip
+\chave{D/1, N/2, M/3, G/4, 15/5, 06/6, 04/7, -/x, PF/8, 4425/9}
+\fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a) e na Aula 10.}
+\end{figure}
 
-\section{Rebaixo frontal}
+\noindent Porta-ferramenta PDJNL 2525M 15: P – fixação por alavanca; D – pastilha rômbica de 55°; J – estilo com ângulo de posição de 93°; N – pastilha de folga 0°; L – versão à esquerda; 25 e 25 – haste de 25 $\times$ 25 mm; M – comprimento de 150 mm; 15 – tamanho da pastilha.
 
-O rebaixo entre o cubo e o aro não pode ser feito com um porta-ferramenta externo comum, porque a haste bateria no aro. Por isso foi escolhida a ferramenta de canal frontal CoroCut 2 C2A-RS25-RFJ18B-085DB, com haste de 25 $\times$ 25 mm, profundidade máxima de corte de 18 mm e faixa de 85 a 130 mm para o diâmetro do primeiro canal. O primeiro mergulho é feito junto ao Ø110, dentro dessa faixa, e os seguintes avançam em direção ao cubo. A pastilha C2I-J2N-0500-0004-GM 1225 tem largura de 5 mm, raio de ponta de 0,4 mm e geometria GM, de usinagem média; com esse raio pequeno, os raios de 3 mm do desenho são obtidos por interpolação no passe de contorno.
+\noindent Pastilha DNMG 15 06 04-PF 4425: D – rômbica de 55°; N – folga de 0°; M – tolerância; G – furo e quebra-cavaco nas duas faces; 15 – aresta de 15 mm; 06 – espessura de 6,35 mm; 04 – raio de ponta de 0,4 mm; PF – geometria de acabamento para aço; 4425 – mesma classe do T01.
 
+A página da DNMG 15 06 04-PF 4425 consultada não exibia dados de corte coerentes com a pastilha. Por isso foram usados como referência os dados da mesma geometria e classe em outro formato, a WNMG 06 04 04-PF 4425: a\textsubscript{p} = 0,4 mm (0,25 a 1,5), f = 0,15 mm/volta (0,07 a 0,3) e v\textsubscript{c} = 400 m/min (450 a 335) (SANDVIK COROMANT, 2026a).
 
-\section{Fresa para os dentes}
+% ------------------------------------------------------------------------------------------
+\section{T03 – Furação}
 
-Os dentes são fresados com a fresa de disco evolvente ZPS-FN da série 890070, código de pedido 890070.06004, de aço rápido, para módulo 6 e ângulo de pressão de 20°, conforme a DIN 3972. A fresa tem Ø100 mm, furo de Ø32 mm com rasgo de chaveta e 12 dentes, e é fornecida em jogos de oito fresas numeradas de acordo com o número de dentes da engrenagem. Para 24 dentes usa-se a fresa nº 4, que cobre de 21 a 25 dentes. O furo de Ø32 mm é compatível com a árvore porta-fresa que acompanha a fresadora UWF 5.
+O furo é aberto com a broca de pastilhas intercambiáveis CoroDrill 880-D2300L25-03 (Figura~\ref{fig:chaveT03}). Para um furo de Ø23 mm, a Aula 19 indica broca de pastilhas intercambiáveis para furos maiores, e essa broca corta em cheio, sem furo de centro. A broca usa duas pastilhas de tamanho 04, que é o tamanho indicado pelo fabricante para o Ø23 (MSC, 2026): a central, de classe tenaz com cobertura PVD, porque no centro da broca a velocidade de corte tende a zero; e a periférica, com cobertura CVD e aresta alisadora (Wiper), que é mais resistente ao desgaste e melhora o acabamento da parede. O fabricante observa que a pastilha central trabalha de v\textsubscript{c} = 0 até 50\,\% da velocidade máxima e a periférica, acima disso.
 
+\begin{figure}[H]
+\centering
+\caption{Chave de código do conjunto T03}\label{fig:chaveT03}
+\chave{880/1, -/x, D2300/2, L25/3, -/x, 03/4}\par\medskip
+\chave{880/1, -/x, 04/2, 03/3, 05/4, H/5, -/x, C/6, -/x, GM/7, 1044/8}\qquad
+\chave{W/9, -/x, P/6, -/x, 4334/8}
+\fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a) e MSC (2026).}
+\end{figure}
 
-\section{Fresa para os rasgos em arco}
+\noindent Broca 880-D2300L25-03: 1 – família CoroDrill 880; 2 – D2300, diâmetro de 23,00 mm; 3 – L25, haste cilíndrica Ø25 mm com flange (ISO 9766); 4 – 03, profundidade máxima de 3 $\times$ D (69 mm), suficiente para os 54,65 mm da peça nesta etapa.
 
-Os rasgos são fresados com a fresa de topo CoroMill 390 R390-016A16-11L, de Ø16 mm, com duas pastilhas e haste cilíndrica de 16 mm. O ângulo de posição de 90° produz paredes retas, a fresa pode trabalhar em canal com a largura total e admite entrada em rampa de até 10,5°. O passo largo (letra L) deixa mais espaço para o cavaco do aço. As pastilhas R390-11 T3 08M-PM 1130 têm aresta de 10 mm, raio de ponta de 0,8 mm, geometria PM e cobertura PVD.
+\noindent Pastilhas 880-04 03 05H-C-GM 1044 (central) e 880-04 03 W05H-P-GM 4334 (periférica): 1 – família 880; 2 – 04, tamanho da pastilha; 3 – 03, espessura; 4 – 05, raio de ponta de 0,5 mm; 5 – H, letra da execução no código Sandvik; 6 – C (central) ou P (periférica); 7 – GM, geometria para usinagem média; 8 – classe: 1044 (PVD TiAlN, tenaz) na central e 4334 (CVD) na periférica; 9 – W, aresta alisadora (Wiper) na periférica.
 
+\noindent A broca é presa na torre com a bucha cilíndrica Sandvik EF-32-25 (haste Ø32, furo Ø25, com posicionamento EasyFix e passagem de refrigerante).
 
-\section{Brocha}
+Para a mesma geometria e classe da pastilha periférica (tamanho 03, broca de 3 $\times$ D), o fabricante indica f = 0,11 mm/volta (0,06 a 0,14) e v\textsubscript{c} = 200 m/min (235 a 150). Para o tamanho 04 a página consultada não exibia os dados, e esses valores foram usados como referência (SANDVIK COROMANT, 2026a).
 
-O rasgo de chaveta é brochado com brocha 8 mm série C, ref. 125-09-01-BR-00008, com bucha-guia de Ø24,5 mm (sob encomenda) e 2 calços, da fabricante Prada Nargesa.
+% ------------------------------------------------------------------------------------------
+\section{T04 – Mandrilamento}
 
+O mandrilamento é feito com a barra CoroTurn 107 A16R-SDUCL 07-R e a pastilha DCMT 07 02 04-PF 4425 (Figura~\ref{fig:chaveT04}). A barra de Ø16 mm trabalha em furos a partir de 20 mm e admite balanço de até 64 mm (4 $\times$ D), suficiente para atravessar os 54,65 mm da peça mais as aproximações. A pastilha positiva, com folga de 7°, reduz as forças de corte e a tendência à vibração da barra, que trabalha em balanço. O ângulo de posição de 93° permite chanfrar a entrada do furo com a mesma ferramenta.
 
-\section{Rebolos}
+\begin{figure}[H]
+\centering
+\caption{Chave de código do conjunto T04}\label{fig:chaveT04}
+\chave{A/1, 16/2, R/3, -/x, S/4, D/5, U/6, C/7, L/8, 07/9, -/x, R/10}\par\medskip
+\chave{D/1, C/2, M/3, T/4, 07/5, 02/6, 04/7, -/x, PF/8, 4425/9}
+\fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a) e Misumi (2024).}
+\end{figure}
 
-Os rebolos foram especificados conforme a Aula 18, que identifica abrasivo, granulometria, dureza, estrutura e liga. Na retificação plana usa-se o rebolo Norton 38A46-HVBE de 350 $\times$ 40 $\times$ 127 mm: 38A é o óxido de alumínio branco, adequado para aços temperados por ser friável e aquecer pouco a peça; 46 é o tamanho de grão médio; H indica rebolo mole, seguindo a regra de rebolo mole para peça dura; V é a liga vitrificada; e BE é a designação do fabricante para o ligante. No furo usa-se o rebolo Norton 38A80-K5VBE de Ø20 $\times$ 20 mm, com grão mais fino (80) para melhor acabamento, dureza média (K) e estrutura 5. R01 e R02 identificam os rebolos na folha de processo. As designações 38A46-HVBE e 38A80-K5VBE especificam o abrasivo e a liga. A referência de pedido depende também das dimensões e da montagem. O Quadro~\ref{quad:ferr} reúne os conjuntos utilizados.
+\noindent Barra A16R-SDUCL 07-R: 1 – A, barra de aço com refrigeração interna; 2 – 16, diâmetro da haste de 16 mm; 3 – R, comprimento de 200 mm; 4 – S, fixação da pastilha por parafuso; 5 – D, pastilha rômbica de 55°; 6 – U, ângulo de posição de 93°; 7 – C, folga da pastilha de 7°; 8 – L, versão à esquerda; 9 – 07, tamanho da pastilha; 10 – R, haste cilíndrica com ranhura para bucha EasyFix (sem o sufixo, a haste tem três faces planas).
 
+\noindent Pastilha DCMT 07 02 04-PF 4425: 1 – D, rômbica de 55°; 2 – C, folga de 7° (positiva); 3 – M, tolerância; 4 – T, furo escareado com quebra-cavaco em uma face; 5 – 07, aresta de 7 mm; 6 – 02, espessura de 2,38 mm; 7 – 04, raio de ponta de 0,4 mm; 8 – PF, geometria de acabamento; 9 – 4425, classe CVD para o grupo P.
+
+\noindent A barra é presa na torre com a bucha cilíndrica Sandvik EF-32-16 (haste Ø32, furo Ø16, com posicionamento EasyFix), que posiciona a altura de centro da pastilha pela ranhura da haste.
+
+Para o grupo P2.1, o fabricante indica a\textsubscript{p} = 0,3 mm (0,1 a 1,7), f = 0,08 mm/volta (0,05 a 0,16) e v\textsubscript{c} = 445 m/min (465 a 395) (SANDVIK COROMANT, 2026a). Com f = 0,10 mm/volta, R\textsubscript{máx} = 0,10²/(8 $\cdot$ 0,4) = 3,1 \textmu{}m, que deixa o furo pronto para a retificação.
+
+% ------------------------------------------------------------------------------------------
+\section{T05 – Rebaixo frontal da alma}
+
+O rebaixo entre o cubo e o aro não pode ser feito com um porta-ferramenta externo comum, porque a haste bateria no aro. É um canal frontal (axial) largo, de Ø46 a Ø110 e 17 mm de profundidade. Foi escolhida a ferramenta de canal frontal CoroCut 1-2 LF123J25-2525B-085BM com a pastilha N123J2-0500-0004-GM 4325 (Figura~\ref{fig:chaveT05}). A ferramenta tem haste de 25 $\times$ 25 mm, largura de corte de 5 mm e profundidade máxima de 25 mm, maior que os 17 mm do rebaixo. A lâmina é curva e admite primeiro canal com diâmetro externo entre 95 e 130 mm; o primeiro mergulho, junto ao Ø110, fica dentro dessa faixa, e os mergulhos seguintes alargam o canal em direção ao cubo.
+
+\begin{figure}[H]
+\centering
+\caption{Chave de código do conjunto T05}\label{fig:chaveT05}
+\chave{L/1, F/2, 123/3, J/4, 25/5, -/x, 2525/6, B/7, -/x, 085/8, BM/7}\par\medskip
+\chave{N123/1, J/2, 2/3, -/x, 0500/4, -/x, 0004/5, -/x, GM/6, 4325/7}
+\fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a).}
+\end{figure}
+
+\noindent Ferramenta LF123J25-2525B-085BM: 1 – L, versão à esquerda; 2 – F, canal frontal (axial); 3 – 123, família CoroCut 1-2; 4 – J, tamanho do assento da pastilha; 5 – 25, profundidade máxima de corte de 25 mm; 6 – 2525, haste de 25 $\times$ 25 mm; 7 – B e BM, execução da haste e da lâmina no código do fabricante; 8 – 085, diâmetro interno mínimo do primeiro canal, 85 mm (diâmetro externo do primeiro canal de 95 a 130 mm).
+
+\noindent Pastilha N123J2-0500-0004-GM 4325: 1 – N123, pastilha CoroCut 1-2; 2 – J, tamanho do assento; 3 – 2, pastilha de duas arestas; 4 – 0500, largura de 5,00 mm; 5 – 0004, raio de ponta de 0,4 mm; 6 – GM, geometria para usinagem média (avanço de 0,07 a 0,19 mm/volta); 7 – 4325, classe CVD (TiCN + Al\textsubscript{2}O\textsubscript{3} + TiN) para aço.
+
+Os dados técnicos da ferramenta foram confirmados na versão à direita, RF123J25-2525B-085BM (largura 5 mm, profundidade 25 mm, faixa do primeiro canal de 95 a 130 mm); a versão à esquerda tem a mesma designação com a letra L e deve ter a disponibilidade confirmada no catálogo do fabricante. Com o raio de ponta de 0,4 mm, os raios de 3 mm do desenho são obtidos por interpolação no passe de contorno.
+
+% ------------------------------------------------------------------------------------------
+\section{F01 – Fresa de disco para os dentes}\label{sec:F01}
+
+Os dentes são fresados com a fresa de disco de perfil evolvente ZPS-FN 890070.06004, para módulo 6 e ângulo de pressão de 20°, conforme a DIN 3972 (Figura~\ref{fig:chaveF01}). Essas fresas são fornecidas em jogos de oito, numeradas de acordo com o número de dentes da engrenagem; para 24 dentes usa-se a fresa nº 4, que cobre de 21 a 25 dentes. Pelo catálogo, a fresa tem Ø100 mm (js16), furo de Ø32 mm (H7) com rasgo de chaveta, 12 dentes, profundidade do perfil de 13,5 mm e é de aço rápido (HSS), tipo N, de uso universal em materiais com resistência de até 900 MPa, com ângulo de saída de 10° (ZPS-FN, 2026).
+
+A fresa de aço rápido foi mantida porque é a ferramenta padrão para fresamento de forma em fresadora universal, com velocidade de corte baixa, e o aço rápido é tenaz o bastante para o corte intermitente do fresamento (Aulas 7 e 15). O furo de Ø32 mm é compatível com a árvore porta-fresa de Ø32 mm da fresadora UWF 5.
+
+\begin{figure}[H]
+\centering
+\caption{Chave de código da fresa F01}\label{fig:chaveF01}
+\chave{890070/1, -/x, 06/2, 004/3}
+\fonte{Elaborado pelo grupo com base em ZPS-FN (2026).}
+\end{figure}
+
+\noindent 1 – 890070, série de fresas de disco de perfil evolvente para dentes retos, 20°, DIN 3972; 2 – 06, módulo 6; 3 – 004, fresa nº 4 (21 a 25 dentes).
+
+O catálogo indica, para aços de construção com até 850 N/mm² (grupo P.2), v\textsubscript{c} = 15 m/min, f\textsubscript{z} = 0,055 mm para a fresa de Ø100 e profundidade máxima por passe de 2,1$\cdot$m; para aços com até 600 N/mm² (grupo P.1), v\textsubscript{c} = 20 m/min e f\textsubscript{z} = 0,066 mm (ZPS-FN, 2026).
+
+% ------------------------------------------------------------------------------------------
+\section{F02 – Fresa de topo para os rasgos em arco}
+
+Os rasgos são fresados com a fresa de topo CoroMill 390 R390-016A16-11L e as pastilhas R390-11 T3 08M-PM 1130 (Figura~\ref{fig:chaveF02}). A fresa tem Ø16 mm, duas pastilhas, ângulo de posição de 90°, que produz paredes retas, profundidade máxima de corte de 10 mm e ângulo máximo de rampa de 10,5°, o que permite entrar no material em rampa de 5° sem furo prévio. O passo largo (L) deixa mais espaço para o cavaco do aço no canal fechado.
+
+\begin{figure}[H]
+\centering
+\caption{Chave de código do conjunto F02}\label{fig:chaveF02}
+\chave{R/1, 390/2, -/x, 016/3, A/4, 16/5, -/x, 11/6, L/7}\par\medskip
+\chave{R390/1, -/x, 11/2, T3/3, 08/4, M/5, -/x, PM/6, 1130/7}
+\fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a).}
+\end{figure}
+
+\noindent Fresa R390-016A16-11L: 1 – R, corte à direita; 2 – 390, família CoroMill 390; 3 – 016, diâmetro de corte de 16 mm; 4 – A, haste cilíndrica; 5 – 16, diâmetro da haste de 16 mm; 6 – 11, tamanho da pastilha; 7 – L, passo largo.
+
+\noindent Pastilha R390-11 T3 08M-PM 1130: 1 – R390, pastilha CoroMill 390; 2 – 11, tamanho (aresta de cerca de 11 mm, a\textsubscript{p} máximo de 10 mm); 3 – T3, espessura de 3,97 mm; 4 – 08, raio de ponta de 0,8 mm; 5 – M, classe de tolerância; 6 – PM, geometria para usinagem média de aço; 7 – 1130, classe com cobertura PVD, que mantém a aresta afiada e suporta o choque térmico do corte intermitente a seco.
+
+Para o grupo P2.1, o fabricante indica f\textsubscript{z} = 0,12 mm (0,08 a 0,2), espessura máxima do cavaco h\textsubscript{ex} = 0,12 mm (0,08 a 0,2) e v\textsubscript{c} = 275 m/min (280 a 265) (SANDVIK COROMANT, 2026a).
+
+% ------------------------------------------------------------------------------------------
+\section{B01 – Brocha para o rasgo de chaveta}
+
+O rasgo de chaveta é brochado com uma brocha de empurrar de aço rápido para rasgo de 8 mm, estilo C-1 (duMONT, modelo 44407), com 3/8" $\times$ 11 3/4" (9,52 $\times$ 298,45 mm), conforme a ISO/R 773, usada com bucha-guia com colar e dois calços (MCMASTER-CARR, 2026; DUMONT, 2022). A brocha, a bucha e os calços precisam ser do mesmo estilo. As buchas padrão do estilo C-1 existem para furos de Ø24 e Ø25 mm; como o furo está em Ø24,5 mm nesta etapa, a bucha é especial, de Ø24,5 mm, que o fabricante fornece sob encomenda. Para a brocha de 3/8"-C, de mesmo corpo, o fabricante indica comprimento de corte de 10 a 63,5 mm, maior que os 51,3 mm do cubo, e força de 4340 lbf (19,3 kN) no comprimento máximo.
+
+% ------------------------------------------------------------------------------------------
+\section{R01 e R02 – Rebolos}
+
+Os rebolos foram especificados conforme a Aula 18, que identifica, nesta ordem, abrasivo, granulometria, dureza, estrutura e liga. Para aço temperado de 58 a 62 HRC usa-se óxido de alumínio (Aula 18, slide 27), e a regra ``peça dura, rebolo mole'' (Aula 18, slide 22) orienta a dureza.
+
+\begin{figure}[H]
+\centering
+\caption{Chave de especificação dos rebolos R01 e R02}\label{fig:chaveR}
+\chave{38/1, A/2, 46/3, -/x, H/4, 8/5, V/6, BE/7}\qquad
+\chave{38/1, A/2, 80/3, -/x, K/4, 5/5, V/6, BE/7}
+\fonte{Elaborado pelo grupo com base na Aula 18 e em Norton (2026).}
+\end{figure}
+
+\noindent Na retificação plana usa-se o rebolo Norton 38A46-H8VBE de 350 $\times$ 40 $\times$ 127 mm, a dimensão da retificadora: 1 – 38, prefixo Norton do óxido de alumínio branco, friável e de corte frio, indicado para aços temperados e sensíveis ao calor; 2 – A, óxido de alumínio; 3 – 46, grão médio; 4 – H, rebolo mole, pela regra de rebolo mole para peça dura; 5 – 8, estrutura normal (a Norton considera estrutura 8 quando o número é omitido); 6 – V, liga vitrificada; 7 – BE, designação Norton da liga, dentro do grupo das vitrificadas.
+
+\noindent No furo usa-se o rebolo Norton 38A80-K5VBE de Ø20 $\times$ 20 mm, com o mesmo abrasivo, grão mais fino (80) para o acabamento Ra 0,8 \textmu{}m, dureza K e estrutura 5, mais fechada. A dureza K fica no limite: é mole pela classificação da Aula 18 (H a K) e média pela Norton (I a P). Ela foi escolhida um pouco mais dura que a do rebolo plano porque o rebolo interno, pequeno e em alta rotação, perde grãos mais depressa e precisa manter o perfil. A especificação 38A80-K5VBE existe no catálogo de rebolos da Norton para aços-ferramenta; a dimensão Ø20 $\times$ 20 mm, montada em haste, é pedida ao fabricante.
+
+Como alternativa, o catálogo da KINIK recomenda para retificação plana de aço temperado com rebolo 355 $\times$ 38 $\times$ 127 mm as especificações WA46K8V e WA60J8V (KINIK, s.d.), de mesmo abrasivo (WA, alumina branca), grão e liga. Foi mantido o rebolo Norton porque a dimensão 350 $\times$ 40 $\times$ 127 mm é a da KNUTH HFS 3063 e porque o grau H é mais mole, como pede a regra da Aula 18 para peça dura com grande área de contato.
+
+% ------------------------------------------------------------------------------------------
+\section{Resumo das ferramentas}
+
+O Quadro~\ref{quad:ferr} reúne os conjuntos utilizados e os códigos usados na folha de processo.
 
 \begin{quadro}[H]
 \centering
@@ -73,17 +213,16 @@ Os rebolos foram especificados conforme a Aula 18, que identifica abrasivo, gran
 \begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.0851\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.2067\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.5351\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1581\linewidth-2\tabcolsep\relax}|}
 \hline
 \rowcolor{cinza} \textbf{Código} & \textbf{Operações} & \textbf{Ferramenta} & \textbf{Fabricante} \\ \hline
-T01 & 20 e 30 (desbaste) & PCLNR 2525M 12 + CNMG 12 04 08-PM 4425 & Sandvik Coromant \\ \hline
-T02 & 20 e 30 (acabamento) & PDJNR 2525M 15 + DNMG 15 06 04-PF 4425 & Sandvik Coromant \\ \hline
-T03 & 20 (furação) & 880-D2300L25-03 + 880-04 03 05H-C-GM 1044 + 880-04 03 W05H-P-GM 4334 & Sandvik Coromant \\ \hline
-T04 & 20 e 30 (furo) & A16R-SDUCR 07-R + DCMT 07 02 04-PF 4425 & Sandvik Coromant \\ \hline
-T05 & 20 e 30 (rebaixo) & C2A-RS25-RFJ18B-085DB + C2I-J2N-0500-0004-GM 1225 & Sandvik Coromant \\ \hline
-F01 & 40 & Fresa de disco evolvente 890070.06004, módulo 6, nº 4, Ø100 $\times$ 32 mm & ZPS-FN \\ \hline
+T01 & 20.1 a 20.3; 30.1 a 30.3 & PCLNL 2525M 12 + CNMG 12 04 08-PM 4425 & Sandvik Coromant \\ \hline
+T02 & 20.6; 30.5 & PDJNL 2525M 15 + DNMG 15 06 04-PF 4425 & Sandvik Coromant \\ \hline
+T03 & 20.4 & 880-D2300L25-03 + 880-04 03 05H-C-GM 1044 + 880-04 03 W05H-P-GM 4334; bucha EF-32-25 & Sandvik Coromant \\ \hline
+T04 & 20.8; 30.7 & A16R-SDUCL 07-R + DCMT 07 02 04-PF 4425; bucha EF-32-16 & Sandvik Coromant \\ \hline
+T05 & 20.5, 20.7; 30.4, 30.6 & LF123J25-2525B-085BM + N123J2-0500-0004-GM 4325 & Sandvik Coromant \\ \hline
+F01 & 40 & Fresa de disco evolvente 890070.06004, módulo 6, nº 4, Ø100 $\times$ 32 mm, HSS & ZPS-FN \\ \hline
 F02 & 50 & R390-016A16-11L + R390-11 T3 08M-PM 1130 & Sandvik Coromant \\ \hline
-B01 & 60 & 125-09-01-BR-00008& Prada Nargesa\\ \hline
-R01 & 90 & Rebolo 38A46-HVBE, 350 $\times$ 40 $\times$ 127 mm & Norton \\ \hline
+B01 & 60 & Brocha 8 mm estilo C-1 (modelo 44407), 2 calços e bucha-guia C-1 especial Ø24,5 & duMONT \\ \hline
+R01 & 90 & Rebolo 38A46-H8VBE, 350 $\times$ 40 $\times$ 127 mm & Norton \\ \hline
 R02 & 100 & Rebolo 38A80-K5VBE, Ø20 $\times$ 20 mm & Norton \\ \hline
 \end{tabular}}
 \fonte{Elaborado pelo grupo com base nos catálogos dos fabricantes.}
 \end{quadro}
-

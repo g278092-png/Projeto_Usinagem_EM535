@@ -22,6 +22,9 @@
 \usepackage{titletoc}
 \usepackage{fancyhdr}
 \usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{multirow}
+\usepackage{url}
 \usepackage[hidelinks]{hyperref}
 
 % ---------------------------------------------------------------- formatação (ABNT)
@@ -35,6 +38,25 @@
 \DeclareFloatingEnvironment[fileext=loq,listname={Lista de quadros},name=Quadro,within=chapter]{quadro}
 \captionsetup{labelsep=endash,font=small,justification=centering,skip=4pt}
 \newcommand{\fonte}[1]{\par\vspace{2pt}{\footnotesize\raggedright Fonte: #1\par}}
+
+% ---------------------------------------------------------------- chave de código em caixas
+% uso: \chave{C/1, N/2, M/3, -/x, PM/8}   (o par "-/x" desenha só o separador, sem caixa)
+\def\sepmark{x}
+\newcommand{\chave}[1]{%
+\begin{tikzpicture}[baseline=(k0.base)]
+\node[inner sep=0pt, minimum size=0pt] (k0) at (0,0) {};
+\foreach \c/\n [count=\i] in {#1} {%
+  \pgfmathtruncatemacro{\prev}{\i-1}%
+  \ifx\n\sepmark
+    \node[anchor=west, inner sep=1pt, font=\large\bfseries] (k\i) at ([xshift=1.5pt]k\prev.east) {\c};
+  \else
+    \node[draw, line width=0.9pt, anchor=west, minimum height=7.5mm, minimum width=6.5mm, inner xsep=2.5pt,
+          font=\large\bfseries] (k\i) at ([xshift=1.5pt]k\prev.east) {\c};
+    \draw[line width=0.5pt] (k\i.south west) rectangle ([yshift=-3.6mm]k\i.south east)
+          node[midway, font=\scriptsize] {\n};
+  \fi
+}
+\end{tikzpicture}}
 
 \addto\captionsbrazil{%
   \renewcommand{\contentsname}{Sumário}%

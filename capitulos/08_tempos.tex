@@ -1,92 +1,101 @@
-
 \chapter{TEMPOS DE USINAGEM}
 
 \section{Metodologia}
 
-O tempo de corte foi calculado pela relação entre o percurso de avanço l\textsubscript{f} e a velocidade de avanço (Aula 2):
-
+O tempo de corte foi calculado pela relação entre o percurso de avanço l\textsubscript{f} e a velocidade de avanço (Aula 2, slide 36):
 
 \begin{equation}\label{eq:tc}
   t_{c} = \frac{l_{f}}{v_{f}}
 \end{equation}
 
-No faceamento com velocidade de corte constante a rotação aumenta à medida que a ferramenta se aproxima do centro, até o limite de rotação da máquina. Nesse caso, como indicado na Aula 13, o tempo foi obtido integrando dt = dr/(f$\cdot$n) ao longo do raio, o que resulta em:
-
+No faceamento com velocidade de corte constante, a rotação aumenta à medida que a ferramenta se aproxima do centro, até o limite de rotação da máquina, e a Equação \eqref{eq:tc} não pode ser usada diretamente. Nesse caso, como indicado na Aula 13 (slide 13), o tempo foi obtido integrando dt = dr/(f$\cdot$n) ao longo do raio:
 
 \begin{equation}\label{eq:tface}
-  t_{c} = \frac{\pi \left( R^{2} - r_{\text{lim}}^{2} \right)}{1000 \cdot f \cdot v_{c}} + \frac{r_{\text{lim}} - r_{i}}{f \cdot n_{\text{máx}}} \quad r_{\text{lim}} = \frac{1000 \cdot v_{c}}{2 \pi \cdot n_{\text{máx}}}
+  t_{c} = \frac{\pi \left( R^{2} - r_{\text{lim}}^{2} \right)}{1000 \cdot f \cdot v_{c}} + \frac{r_{\text{lim}} - r_{i}}{f \cdot n_{\text{máx}}} \qquad r_{\text{lim}} = \frac{1000 \cdot v_{c}}{2 \pi \cdot n_{\text{máx}}}
 \end{equation}
 
 em que R é o raio inicial, r\textsubscript{i} o raio final e r\textsubscript{lim} o raio a partir do qual a rotação fica limitada a n\textsubscript{máx}. No fresamento com fresa de disco, o percurso inclui a distância de entrada da fresa até a profundidade total:
-
 
 \begin{equation}\label{eq:la}
   l_{a} = \sqrt{a_{e} \cdot \left( D - a_{e} \right)}
 \end{equation}
 
-Foram adotados 2 mm de aproximação e de saída no torneamento e na furação, 1 mm de aproximação nos mergulhos do rebaixo, 5 mm além de l\textsubscript{a} no fresamento dos dentes e 20 mm de ultrapassagem em cada extremo do curso na retificação plana. O tempo total por peça segue a Aula 13:
+Foram adotados 2 mm de aproximação e de saída no torneamento e na furação (no faceamento, R = 82 mm para o Ø160; no degrau, R = 80 mm, isto é, o Ø157 mais 1,5 mm), 1 mm de aproximação nos mergulhos do rebaixo e 5 mm além de l\textsubscript{a} no fresamento dos dentes. Nas retificações:
 
+\begin{itemize}
+\item \textbf{Plana:} a face útil do cubo tem 42 mm (Ø46 menos os chanfros de 2 mm). O curso da mesa é de 42 + 2 $\times$ 20 = 82 mm, com 20 mm de ultrapassagem em cada extremo, e há 0,3 s de inversão por curso. São 11 cursos transversais por camada, (42 + 40)/8 arredondado para cima, com o rebolo de 40 mm de largura e s = 8 mm. Cada camada leva 11 $\times$ (82/15.000 + 0,3/60) = 0,115 min, e as duas faces, com 11 camadas cada (7 + 2 + 2), levam 2 $\times$ 11 $\times$ 0,115 = 2,53 min.
+\item \textbf{Interna:} o rebolo de 20 mm de largura ultrapassa o furo em um terço da sua largura em cada extremo, e o curso de oscilação é de 51 + 2 $\times$ 20/3 $-$ 20 = 44,3 mm. Os 44 passes de desbaste são feitos a 10 mm por volta da peça (3.820 mm/min) e os 16 passes de acabamento e faiscamento, a 5 mm por volta (1.910 mm/min), o que dá 44 $\times$ 44,3/3.820 + 16 $\times$ 44,3/1.910 = 0,88 min.
+\end{itemize}
+
+O tempo total por peça segue a Aula 13 (slide 9):
 
 \begin{equation}\label{eq:tt}
-  t_{t} = t_{c} + t_{s} + t_{a} + \frac{t_{p}}{Z}
+  t_{t} = t_{c} + t_{s} + t_{a} + \frac{t_{p}}{Z} + \frac{N_{t}}{Z} \cdot t_{ft}
 \end{equation}
 
-em que t\textsubscript{s} é o tempo de colocação, fixação e retirada da peça, t\textsubscript{a} o tempo de aproximação, afastamento e troca de ferramentas, t\textsubscript{p} o tempo de preparação da máquina para o lote e Z o número de peças do lote. Como não há cronometragem, esses tempos foram estimados, considerando um lote de 10 peças. O tempo de troca de arestas por desgaste foi desprezado, pois o tempo de corte de cada ferramenta por peça é pequeno em relação à sua vida.
+em que t\textsubscript{s} é o tempo de colocação, fixação e retirada da peça, t\textsubscript{a} o tempo de aproximação, afastamento e troca de ferramentas na torre ou no magazine, t\textsubscript{p} o tempo de preparação da máquina para o lote, Z o número de peças do lote, N\textsubscript{t} o número de trocas de ferramenta por desgaste no lote e t\textsubscript{ft} o tempo de cada troca. Como não há cronometragem, t\textsubscript{s}, t\textsubscript{a} e t\textsubscript{p} foram estimados, considerando um lote de 10 peças.
 
+O último termo foi desprezado nas ferramentas de metal duro: a troca de uma aresta leva cerca de 1 min e ocorre poucas vezes no lote, porque o tempo de corte de cada ferramenta no lote é pequeno (o maior é o da T05, com 2 $\times$ 2,8 min por peça, ou cerca de 55 min no lote). Para a fresa de disco F01 o termo não é desprezível: ela corta 105 min por peça, ou cerca de 1.050 min no lote. O fabricante não publica a vida da fresa, e por isso o número de reafiações não pôde ser calculado. Na prática, o desgaste de flanco da fresa deve ser acompanhado (Aula 12) e uma segunda fresa nº 4 deve ficar disponível para troca, com a primeira enviada para reafiação; o tempo dessas trocas, não estimado, aumentaria o tempo total da operação 40.
 
 \section{Tempos de corte}
 
 \begin{table}[H]
 \centering
 \caption{Tempos de corte por peça}\label{tab:tc}
-{\small\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.0677\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.3324\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.4679\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1170\linewidth-2\tabcolsep\relax}|}
+{\footnotesize\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\centering\arraybackslash}p{1.1cm}|>{\raggedright\arraybackslash}p{4.3cm}|>{\raggedright\arraybackslash}p{6.6cm}|>{\centering\arraybackslash}p{1.5cm}|}
 \hline
 \rowcolor{cinza} \textbf{Op.} & \textbf{Etapa} & \textbf{Percurso / cálculo} & \textbf{t\textsubscript{c} (min)} \\ \hline
-20 & Faceamento de desbaste (2 passes) & Equação \eqref{eq:tface}, R = 82 mm até o centro & 0,52\\ \hline
-20 & Torneamento externo de desbaste & 37,6 mm a 156 mm/min & 0,24\\ \hline
-20 & Degrau do aro & Equação \eqref{eq:tface}, de R = 80 a 23,5 mm & 0,22\\ \hline
-20 & Acabamento (face e Ø156) & Equação \eqref{eq:tface} + 37,6 mm & 0,67 \\ \hline
-20 & Furação Ø23 & 58,6 mm a 187 mm/min & 0,31 \\ \hline
-20 & Mandrilamento & 58,6 mm a 300 mm/min & 0,20 \\ \hline
-20 & Rebaixo frontal & 8 mergulhos de 17,8 mm + contorno de 68 mm & 2,83\\ \hline
-20 & Chanfros & – & 0,05 \\ \hline
-30 & Faceamento, degrau, Ø156 restante e acabamento & Idem operação 20 & 1,28\\ \hline
-30 & Rebaixo frontal e chanfros & Idem operação 20 & 2,88\\ \hline
-40 & Fresamento dos 24 dentes & 24 $\times$ (86,2 + 86,6) mm a 39,6 mm/min & 104,7 \\ \hline
-50 & Fresamento dos 4 rasgos & Rampa, 3 níveis e contorno a 1.094 e 2.188 mm/min & 1,33 \\ \hline
-60 & Brochamento (3 passes) & 3 cursos de 340 mm a 1,44 m/min & 0,71 \\ \hline
-90 & Retificação plana (2 faces) & 11 camadas de 11 cursos por face & 2,53 \\ \hline
+20.1 & Faceamento de desbaste (2 passes) & Equação \eqref{eq:tface}, de R = 82 mm até o centro & 0,52\\ \hline
+20.2 & Torneamento externo de desbaste & 37,65 mm a 156 mm/min & 0,24\\ \hline
+20.3 & Degrau do aro & Equação \eqref{eq:tface}, de R = 80 a 23,5 mm & 0,22\\ \hline
+20.4 & Furação Ø23 & 58,65 mm a 187 mm/min & 0,31 \\ \hline
+20.5 & Rebaixo: 8 mergulhos & 6 mergulhos de 17,7 mm e 2 de 14,7 mm, cada um a f$\cdot$n no seu diâmetro & 1,73\\ \hline
+20.6 & Acabamento externo & Equação \eqref{eq:tface}, de R = 80,5 a 10,5 mm, mais 37,65 mm no Ø156 & 0,65 \\ \hline
+20.7 & Contorno do rebaixo & 68,2 mm a 65 mm/min & 1,04 \\ \hline
+20.8 & Mandrilamento e chanfros & 58,65 mm a 300 mm/min, mais 0,05 min de chanfros & 0,25 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total da operação 20}} & \textbf{4,96} \\ \hline
+30.1 & Faceamento de desbaste (2 passes) & Equação \eqref{eq:tface}, de R = 82 a 11,25 mm & 0,50 \\ \hline
+30.2 & Torneamento externo do Ø restante & 18 mm a 156 mm/min & 0,12 \\ \hline
+30.3 & Degrau do aro & Como em 20.3 & 0,22 \\ \hline
+30.4 & Rebaixo: 8 mergulhos & Como em 20.5 & 1,73 \\ \hline
+30.5 & Acabamento externo & Equação \eqref{eq:tface}, de R = 80,5 a 11,25 mm, mais 18 mm no Ø156 & 0,49 \\ \hline
+30.6 & Contorno do rebaixo & Como em 20.7 & 1,04 \\ \hline
+30.7 & Chanfro do furo & -- & 0,05 \\ \hline
+\multicolumn{3}{|r|}{\textbf{Total da operação 30}} & \textbf{4,14} \\ \hline
+40 & Fresamento dos 24 dentes & 24 $\times$ (86,2 + 87,2) mm a 39,6 mm/min & 105,1 \\ \hline
+50 & Fresamento dos 4 rasgos & Rampa e 3 níveis (258 mm) a 1.094 mm/min e contorno (213 mm) a 2.188 mm/min, por rasgo & 1,33 \\ \hline
+60 & Brochamento (3 passes) & 3 cursos de 341 mm a 1,44 m/min & 0,71 \\ \hline
+90 & Retificação plana (2 faces) & 2 $\times$ 11 camadas de 11 cursos de 82 mm & 2,53 \\ \hline
 100 & Retificação interna & 60 cursos de 44,3 mm & 0,88 \\ \hline
 \end{tabular}}
 \fonte{Elaborado pelo grupo.}
 \end{table}
 
-
 \section{Tempo total por peça}
+
+A Tabela~\ref{tab:tt} reúne os tempos por operação. A coluna t\textsubscript{p} traz o tempo de preparação do lote; na soma de t\textsubscript{t}, ele entra dividido pelas 10 peças.
 
 \begin{table}[H]
 \centering
 \caption{Tempo total por peça (lote de 10 peças)}\label{tab:tt}
 {\small\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|>{\centering\arraybackslash}p{\dimexpr 0.1515\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1667\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1667\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1667\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1667\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1667\linewidth-2\tabcolsep\relax}|}
+\begin{tabular}{|c|c|c|c|c|c|}
 \hline
-\rowcolor{cinza} \textbf{Operação} & \textbf{t\textsubscript{c} (min)} & \textbf{t\textsubscript{s} (min)} & \textbf{t\textsubscript{a} (min)} & \textbf{t\textsubscript{p} (min)} & \textbf{t\textsubscript{t} (min)} \\ \hline
-10 & 0,0 & 3,0 & 0,0 & 0 & 3,0 \\ \hline
-20 & 5,0& 2,0 & 1,5 & 45 & 13,0\\ \hline
-30 & 4,2& 2,5 & 1,2 & 30 & 10,9\\ \hline
-40 & 104,7 & 5,0 & 15,4 & 60 & 131,1 \\ \hline
-50 & 1,3 & 2,0 & 0,6 & 30 & 6,9 \\ \hline
-60 & 0,7& 2,0 & 1,0 & 15 & 5,2\\ \hline
-70 & 0,0 & 20,0 & 0,0 & 0 & 20,0 \\ \hline
-90 & 2,5 & 3,0 & 1,0 & 20 & 8,5 \\ \hline
-100 & 0,9 & 3,0 & 1,0 & 40 & 8,9 \\ \hline
-110 & 0,0 & 15,0 & 0,0 & 0 & 15,0 \\ \hline
-Total & 119,4&  &  &  & 222,5\\ \hline
+\rowcolor{cinza} \textbf{Operação} & \textbf{t\textsubscript{c} (min)} & \textbf{t\textsubscript{s} (min)} & \textbf{t\textsubscript{a} (min)} & \textbf{t\textsubscript{p} do lote (min)} & \textbf{t\textsubscript{t} por peça (min)} \\ \hline
+10 & 0,00 & 3,0 & 0,0 & 0 & 3,00 \\ \hline
+20 & 4,96 & 2,0 & 1,5 & 45 & 12,96 \\ \hline
+30 & 4,14 & 2,5 & 1,2 & 30 & 10,84 \\ \hline
+40 & 105,10 & 5,0 & 15,4 & 60 & 131,50 \\ \hline
+50 & 1,33 & 2,0 & 0,6 & 30 & 6,93 \\ \hline
+60 & 0,71 & 2,0 & 1,0 & 15 & 5,21 \\ \hline
+70 & 0,00 & 20,0 & 0,0 & 0 & 20,00 \\ \hline
+90 & 2,53 & 3,0 & 1,0 & 20 & 8,53 \\ \hline
+100 & 0,88 & 3,0 & 1,0 & 40 & 8,88 \\ \hline
+110 & 0,00 & 15,0 & 0,0 & 0 & 15,00 \\ \hline
+\textbf{Total} & \textbf{119,65} & \textbf{57,5} & \textbf{21,7} & \textbf{240} & \textbf{222,85}\\ \hline
 \end{tabular}}
 \fonte{Elaborado pelo grupo.}
 \end{table}
 
-
-O tempo de corte por peça é de aproximadamente 119 minutos, dos quais 105 correspondem ao fresamento dos dentes. No fresamento com fresa de disco, o tempo de indexação do cabeçote divisor também é significativo, porque cada vão exige o retorno da mesa e a divisão manual. O tempo do tratamento térmico, feito em lote por fornecedor externo, não está incluído.
-
+O tempo de corte por peça é de aproximadamente 120 minutos, dos quais 105 correspondem ao fresamento dos dentes. No fresamento com fresa de disco, o tempo de indexação do cabeçote divisor também é significativo, porque cada vão exige o retorno da mesa e a divisão manual (15,4 min por peça de t\textsubscript{a}). O tempo do tratamento térmico, feito em lote por fornecedor externo, não está incluído.
