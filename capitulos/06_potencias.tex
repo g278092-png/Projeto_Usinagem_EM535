@@ -1,13 +1,11 @@
-
-\chapter{POTÊNCIAS DE CORTE}
+\chapter{POTÊNCIAS DE CORTE}\label{cap:pot}
 
 \section{Metodologia}
 
-A força de corte foi calculada pelo modelo de Kienzle (Aula 6\_1), com os coeficientes do SAE 8620. No torneamento, a espessura h e a largura b do cavaco vêm do avanço, da profundidade de corte a\textsubscript{p} e do ângulo de posição $\chi$\textsubscript{r}, e a potência de corte resulta da força e da velocidade de corte:
-
+A força de corte foi calculada pelo modelo de Kienzle (Aula 6\_1, slides 25 e 26; MACHADO et al., 2015), com os coeficientes do SAE 8620. No torneamento, a espessura h e a largura b do cavaco vêm do avanço, da profundidade de corte a\textsubscript{p} e do ângulo de posição $\chi$\textsubscript{r}, e a potência de corte resulta da força e da velocidade de corte (Aula 6):
 
 \begin{equation}\label{eq:hb}
-  h = f \cdot \sin \chi_{r} \quad b = \frac{a_{p}}{\sin \chi_{r}}
+  h = f \cdot \sin \chi_{r} \qquad b = \frac{a_{p}}{\sin \chi_{r}}
 \end{equation}
 
 \begin{equation}\label{eq:kienzle}
@@ -18,32 +16,48 @@ A força de corte foi calculada pelo modelo de Kienzle (Aula 6\_1), com os coefi
   P_{c} = \frac{F_{c} \cdot v_{c}}{60 \cdot 10^{3}}
 \end{equation}
 
-com F\textsubscript{c} em N, v\textsubscript{c} em m/min e P\textsubscript{c} em kW. Os coeficientes de Kienzle valem para ferramenta afiada; para considerar o desgaste, a potência foi aumentada em 30 \%, e a potência exigida do motor foi obtida dividindo-se pelo rendimento $\eta$ da máquina, adotado como 0,80 nas máquinas com motor acoplado diretamente ao eixo-árvore e 0,70 na fresadora universal, que tem transmissão por engrenagens (Aula 6):
-
+com F\textsubscript{c} em N, v\textsubscript{c} em m/min e P\textsubscript{c} em kW. Os coeficientes de Kienzle valem para ferramenta afiada; para considerar o desgaste, a potência foi aumentada em 30\,\% (Aula 6\_1, slide 25), e a potência exigida do motor foi obtida dividindo-se pelo rendimento $\eta$ da máquina (Aula 6, slide 19):
 
 \begin{equation}\label{eq:pm}
   P_{m} = \frac{1,3 \cdot P_{c}}{\eta}
 \end{equation}
 
-No modelo adotado, a potência disponível a cada rotação é limitada pela potência nominal e pelo torque máximo. Para o Centur 35D, usam-se $P_{\rm nom}=11$ kW e $T_{\max}=320$ N$\cdot$m. Na comparação com o Centur 30D, usam-se 9 kW e 140 N$\cdot$m, respectivamente. Com $n$ em rpm, a potência em kW é dada por
+A Aula 6 indica $\eta$ de 0,65 a 0,85 para máquinas com transmissão por engrenagens ou correias e de 0,80 a 0,85 para máquinas com motor acoplado. Os valores adotados para cada máquina estão na Tabela~\ref{tab:eta}; todos ficam dentro dessas faixas.
 
+\begin{table}[H]
+\centering
+\caption{Rendimentos adotados}\label{tab:eta}
+{\small\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|>{\raggedright\arraybackslash}p{6.2cm}|c|}
+\hline
+\rowcolor{cinza} \textbf{Máquina} & \textbf{Justificativa} & \textbf{$\eta$} \\ \hline
+ROMI Centur 35D (torno CNC) & Acionamento não detalhado no catálogo; 0,80 está nas duas faixas da Aula 6 & 0,80 \\ \hline
+ROMI D 800 (centro de usinagem) & Idem & 0,80 \\ \hline
+STUDER S121 (eixo interno) & Eixo motorizado (motor no próprio eixo) & 0,80 \\ \hline
+KNUTH HFS 3063 (retificadora plana) & Transmissão não detalhada; valor intermediário da faixa & 0,75 \\ \hline
+KNUTH UWF 5 (fresadora universal) & Caixa de engrenagens com 12 velocidades & 0,70 \\ \hline
+Nargesa BM25 (brochadeira) & Acionamento hidráulico (bomba e cilindro) & 0,70 \\ \hline
+\end{tabular}}
+\fonte{Elaborado pelo grupo com base na Aula 6 (slide 19).}
+\end{table}
+
+No modelo adotado, a potência disponível a cada rotação é limitada pela potência nominal e pelo torque máximo. Para o Centur 35D, usam-se $P_{\rm nom}=11$ kW e $T_{\max}=320$ N$\cdot$m; na comparação com o Centur 30D, 9 kW e 140 N$\cdot$m. Com $n$ em rpm, a potência em kW é dada por
 
 \begin{equation}\label{eq:pdisp}
   P_{\text{disp}} = \min \left( P_{\rm nom}; \frac{T_{\max} \cdot 2 \pi \cdot n}{60 \cdot 10^{3}} \right)
 \end{equation}
 
-Na furação, cada ponto da aresta é cortado uma vez por volta, com espessura h = f$\cdot$sen $\chi$\textsubscript{r}, e a força de corte atua, em média, a um quarto do diâmetro D da broca. Com isso, a potência fica:
+O torque exigido foi calculado com a potência do motor P\textsubscript{m}, que já inclui o acréscimo de 30\,\% e o rendimento, e por isso fica do lado seguro na comparação com o torque máximo da árvore.
 
+Na furação, cada ponto da aresta é cortado uma vez por volta, com espessura h = f$\cdot$sen $\chi$\textsubscript{r} ($\chi$\textsubscript{r} = 88° na CoroDrill 880), e a força de corte atua, em média, a um quarto do diâmetro D da broca. Com isso, a potência é a pressão específica multiplicada pela taxa de remoção de material:
 
 \begin{equation}\label{eq:pfur}
-  P_{c} = \frac{K_{s} \cdot f \cdot D \cdot v_{c}}{240 \cdot 10^{3}} \quad K_{s} = K_{s1} \cdot h^{-z}
+  P_{c} = \frac{K_{s} \cdot f \cdot D \cdot v_{c}}{240 \cdot 10^{3}} \qquad K_{s} = K_{s1} \cdot h^{-z}
 \end{equation}
 
-Como comparação, a fórmula de Kronenberg (Aula 19) com os coeficientes do aço 1025, o mais próximo disponível na tabela, fornece momento torsor de 20,5 N$\cdot$m, contra 23,4 N$\cdot$m obtidos com Kienzle. A diferença é coerente com a maior resistência do 8620, e por isso foi mantido o valor de Kienzle.
+Como comparação, a fórmula de Kronenberg (Aula 19, slides 38 e 39), M\textsubscript{t} = C\textsubscript{1}$\cdot$D\textsuperscript{x1}$\cdot$f\textsuperscript{y1}, com os coeficientes do aço 1025 (C\textsubscript{1} = 37,9; x\textsubscript{1} = 1,87; y\textsubscript{1} = 0,77), o mais próximo disponível na tabela, fornece momento torsor de 2089 kgf$\cdot$mm = 20,5 N$\cdot$m, contra 23,4 N$\cdot$m obtidos com Kienzle. A diferença é coerente com a maior resistência do 8620, e por isso foi mantido o valor de Kienzle.
 
-
-No fresamento (Aula 17), usa-se a espessura média do cavaco h\textsubscript{m} e a pressão específica média K\textsubscript{sm}:
-
+No fresamento (Aula 17, slides 25 a 27), usa-se a espessura média do cavaco h\textsubscript{m} e a pressão específica média K\textsubscript{sm}:
 
 \begin{equation}\label{eq:hm}
   h_{m} = f_{z} \cdot \frac{1 - \cos \varphi_{0}}{\varphi_{0}}
@@ -57,59 +71,81 @@ No fresamento (Aula 17), usa-se a espessura média do cavaco h\textsubscript{m} 
   P_{c} = \frac{K_{sm} \cdot a_{e} \cdot a_{p} \cdot v_{f}}{60 \cdot 10^{6}}
 \end{equation}
 
-Quando a fresa trabalha em canal, com a\textsubscript{e} igual ao diâmetro, a espessura média se reduz a h\textsubscript{m} = 2f\textsubscript{z}/$\pi$. No fresamento dos dentes, o produto a\textsubscript{e}$\cdot$a\textsubscript{p} foi substituído pela área do vão removida em cada passe, calculada a partir do perfil evolvente: 121 mm² no desbaste e 6,3 mm² no acabamento. No brochamento, a força é a soma das forças de Kienzle dos dentes em contato com a peça, considerando subida de 0,06 mm por dente e passo de 6,35 mm.
+Quando a fresa trabalha em canal, com a\textsubscript{e} igual ao diâmetro, a espessura média se reduz a h\textsubscript{m} = 2f\textsubscript{z}/$\pi$. No fresamento dos dentes, o produto a\textsubscript{e}$\cdot$a\textsubscript{p} foi substituído pela área do vão removida em cada passe, calculada a partir do perfil evolvente: 116,5 mm² no desbaste e 14,2 mm² no acabamento. No brochamento, a força é a soma das forças de Kienzle dos dentes em contato com a peça, considerando subida de 0,06 mm por dente e passo de 6,35 mm, o que dá 9 dentes em contato ao mesmo tempo nos 51,3 mm do cubo.
 
-
-Para a retificação foi usada a energia específica de retificação u, da ordem de 40 J/mm³ para aço temperado com rebolo de óxido de alumínio (MALKIN; GUO, 2008), multiplicada pela taxa de remoção Q\textsubscript{w}:
-
+Para a retificação foi usada a energia específica de retificação u, da ordem de 40 J/mm³ para aço temperado com rebolo de óxido de alumínio (MALKIN; GUO, 2008), multiplicada pela taxa de remoção Q\textsubscript{w}. Esse valor não consta nas aulas e foi tirado da literatura.
 
 \begin{equation}\label{eq:pret}
   P_{c} = u \cdot Q_{w}
 \end{equation}
 
 \begin{equation}\label{eq:qw}
-  Q_{w} = a_{e} \cdot s \cdot v_{w} \quad \text{(plana)} \quad Q_{w} = \pi \cdot d \cdot a_{e} \cdot v_{fa} \quad \text{(interna)}
+  Q_{w} = a_{e} \cdot s \cdot v_{w} \quad \text{(plana)} \qquad Q_{w} = \pi \cdot d \cdot a_{e} \cdot v_{fa} \quad \text{(interna)}
 \end{equation}
+
+\section{Validade dos coeficientes de Kienzle}
+
+Os coeficientes de Kienzle foram levantados com v\textsubscript{c} de 90 a 120 m/min e h de 0,1 a 1,4 mm (Aula 6\_1, slide 25). Duas observações limitam o seu uso neste projeto:
+
+\begin{itemize}
+\item Acima de 120 m/min, os valores reais de K\textsubscript{s} tendem a ser menores que os da tabela (Aula 6\_1, slide 27). Como o torneamento trabalha de 280 a 400 m/min, as potências calculadas ficam do lado seguro.
+\item No fresamento dos dentes (h\textsubscript{m} = 0,019 mm), no canal dos rasgos (h\textsubscript{m} = 0,064 mm) e no brochamento (h = 0,06 mm), a espessura fica abaixo de 0,1 mm, e K\textsubscript{s} é extrapolado. Nos dentes, h\textsubscript{m} também fica abaixo do mínimo de 0,04 mm recomendado para o fresamento tangencial (Aula 17, slide 15). Esse valor resulta do avanço por dente do fabricante da fresa de forma (Tabela~\ref{tab:catalogo}); com cavaco tão fino, a pressão específica cresce, o que é considerado ao manter a margem grande de potência da fresadora.
+\end{itemize}
+
+A Aula 17 (slide 28) traz uma tabela própria para fresamento, que para aços baixa liga (175 HB) dá K\textsubscript{s1} = 1700 N/mm² e z = 0,25, os mesmos valores de k\textsubscript{c1} e m\textsubscript{c} que a Sandvik Coromant indica para o grupo P2.1 (SANDVIK COROMANT, 2026b). A Tabela~\ref{tab:cmpks} compara as duas opções. Os coeficientes do 8620 dão potências 25 a 30\,\% maiores, e foram mantidos por ficarem do lado seguro; nenhuma máquina muda com a outra opção.
+
+\begin{table}[H]
+\centering
+\caption{Potência de corte no fresamento com os dois conjuntos de coeficientes}\label{tab:cmpks}
+{\small\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\rowcolor{cinza} \textbf{Operação} & \textbf{h\textsubscript{m} (mm)} & \textbf{P\textsubscript{c} com 8620 (kW)} & \textbf{P\textsubscript{c} com a tabela da Aula 17 (kW)} \\ \hline
+Fresamento dos dentes (desbaste) & 0,019 & 0,45 & 0,35 \\ \hline
+Fresamento dos rasgos (desbaste em canal) & 0,064 & 6,27 & 4,94 \\ \hline
+\end{tabular}}
+\fonte{Elaborado pelo grupo. 8620: K\textsubscript{s1} = 2100 N/mm², z = 0,26 (Aula 6\_1); Aula 17: K\textsubscript{s1} = 1700 N/mm², z = 0,25.}
+\end{table}
 
 \section{Resultados}
 
 Para o faceamento de desbaste no Centur 35D, com f = 0,28 mm/volta, a\textsubscript{p} = 1,425 mm e $\chi$\textsubscript{r} = 95°, as Equações \eqref{eq:hb} a \eqref{eq:pm} dão:
 
-
 \[
-  F_{c} = 2100 \cdot 0,279^{0,74} \cdot 1,43 \approx 1168 \ \text{N}
+  h = 0,28 \cdot \sin 95^{\circ} = 0,279 \ \text{mm} \qquad b = \frac{1,425}{\sin 95^{\circ}} = 1,430 \ \text{mm}
 \]
 
 \[
-  P_{c} = \frac{1168 \cdot 300}{60 \cdot 10^{3}} = 5,84 \ \text{kW} \quad P_{m} = \frac{1,3 \cdot 5,84}{0,80} = 9,49 \ \text{kW}
+  F_{c} = 2100 \cdot 0,279^{0,74} \cdot 1,430 \approx 1168 \ \text{N}
+\]
+
+\[
+  P_{c} = \frac{1168 \cdot 300}{60 \cdot 10^{3}} = 5,84 \ \text{kW} \qquad P_{m} = \frac{1,3 \cdot 5,84}{0,80} = 9,49 \ \text{kW}
 \]
 
 A 597 rpm, a potência disponível no Centur 35D é de 11,0 kW (Equação \eqref{eq:pdisp}), e o torque exigido, de 152 N$\cdot$m, fica abaixo do limite de 320 N$\cdot$m. As demais operações foram calculadas da mesma forma, e os resultados estão na Tabela~\ref{tab:pot}.
-
 
 \begin{table}[H]
 \centering
 \caption{Forças e potências de corte}\label{tab:pot}
 {\small\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|>{\raggedright\arraybackslash}p{\dimexpr 0.3513\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1067\linewidth-2\tabcolsep\relax}|>{\centering\arraybackslash}p{\dimexpr 0.1631\linewidth-2\tabcolsep\relax}|>{\raggedright\arraybackslash}p{\dimexpr 0.1506\linewidth-2\tabcolsep\relax}|}
+\begin{tabular}{|>{\raggedright\arraybackslash}p{5.2cm}|c|c|c|c|c|>{\raggedright\arraybackslash}p{1.9cm}|}
 \hline
-\rowcolor{cinza} \textbf{Operação} & \textbf{F\textsubscript{c} (N)} & \textbf{P\textsubscript{c} (kW)} & \textbf{P\textsubscript{m} (kW)} & \textbf{Potência disponível (kW)} & \textbf{Máquina} \\ \hline
-Faceamento de desbaste (por passe) & 1.168&  5,84& 9,49&  11,0& Centur 35D\\ \hline
-Torneamento externo de desbaste & 1.229 & 5,74& 9,32& 11,0& Centur 35D\\ \hline
-Degrau do aro & 942& 4,71&  7,66& 11,0& Centur 35D\\ \hline
-Acabamento & 258 & 1,72 & 2,80 & 11,0& Centur 35D\\ \hline
-Furação Ø23 & – & 5,08 & 8,26 & 11,0& Centur 35D\\ \hline
-Mandrilamento & 287 & 1,10 & 1,79 & 11,0& Centur 35D\\ \hline
-Rebaixo frontal & 2.188& 5,83& 9,48& 11,0& Centur 35D\\ \hline
-Fresamento dos dentes (desbaste) & – & 0,47 & 0,87 & 5,50 & UWF 5 \\ \hline
-Fresamento dos rasgos (desbaste) & – & 6,27 & 10,19 & 18,50 & D 800 \\ \hline
-Brochamento & 18.853 & 0,45&  0,84& 2,2& BM25\\ \hline
-Retificação plana & – & 1,60 & 2,77 & 4,00 & HFS 3063 \\ \hline
-Retificação interna & – & 1,00 & 1,62 & – & S121 \\ \hline
+\rowcolor{cinza} \textbf{Operação} & \textbf{F\textsubscript{c} (N)} & \textbf{P\textsubscript{c} (kW)} & \textbf{$\eta$} & \textbf{P\textsubscript{m} (kW)} & \textbf{P\textsubscript{disp} (kW)} & \textbf{Máquina} \\ \hline
+Faceamento de desbaste (por passe) & 1.168 & 5,84 & 0,80 & 9,49 & 11,0 & Centur 35D\\ \hline
+Torneamento externo de desbaste & 1.229 & 5,74 & 0,80 & 9,32 & 11,0 & Centur 35D\\ \hline
+Degrau do aro & 942 & 4,71 & 0,80 & 7,66 & 11,0 & Centur 35D\\ \hline
+Furação Ø23 & -- & 5,08 & 0,80 & 8,26 & 11,0 & Centur 35D\\ \hline
+Rebaixo frontal (mergulhos) & 2.187 & 5,83 & 0,80 & 9,48 & 11,0 & Centur 35D\\ \hline
+Acabamento externo & 258 & 1,72 & 0,80 & 2,80 & 11,0 & Centur 35D\\ \hline
+Mandrilamento & 287 & 1,10 & 0,80 & 1,79 & 11,0 & Centur 35D\\ \hline
+Fresamento dos dentes (desbaste) & -- & 0,45 & 0,70 & 0,84 & 5,5 & UWF 5 \\ \hline
+Fresamento dos rasgos (desbaste) & -- & 6,27 & 0,80 & 10,19 & 18,5 & D 800 \\ \hline
+Brochamento & 18.853 & 0,45 & 0,70 & 0,84 & 2,2 & BM25\\ \hline
+Retificação plana & -- & 1,60 & 0,75 & 2,77 & 4,0 & HFS 3063 \\ \hline
+Retificação interna & -- & 1,00 & 0,80 & 1,62 & 5,4\textsuperscript{a} & S121 \\ \hline
 \end{tabular}}
-\fonte{Elaborado pelo grupo.}
+\fonte{Elaborado pelo grupo. \textsuperscript{a}~Potência de um eixo de retificação interna de mercado com corpo de Ø100 mm a 28.650 rpm (Seção~\ref{sec:ret}).}
 \end{table}
 
-
-Todas as operações ficaram dentro da capacidade das máquinas. No torno, a operação mais exigente no torno é o rebaixo (187 de 320 N.m); brochamento 2,5 tf em máquina de 10 tf; retificação interna pede 1,6 kW no eixo.
-
+Todas as operações ficaram dentro da capacidade das máquinas. No torno, as operações mais exigentes são o faceamento de desbaste e o rebaixo frontal, ambos com 86\,\% da potência disponível; o maior torque é o do primeiro mergulho do rebaixo, 185 N$\cdot$m, 58\,\% do máximo. No brochamento, a força de 2,5 tf (já com o acréscimo de 30\,\%) usa 25\,\% das 10 tf da brochadeira. A potência de avanço não foi somada, porque é desprezível diante da potência de corte (Aula 6).

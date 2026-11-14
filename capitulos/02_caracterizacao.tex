@@ -1,8 +1,6 @@
-
 \chapter{CARACTERIZAÇÃO DA PEÇA}
 
 A Figura~\ref{fig:desenho} reproduz o desenho da peça. Do ponto de vista da usinagem, a engrenagem é formada por um aro dentado com diâmetro externo de 156 mm e largura de 48 mm, ligado ao cubo por uma alma de 14 mm de espessura. A alma é rebaixada nas duas faces até o diâmetro de 110 mm e tem quatro rasgos em arco, com extremidades de raio 9 mm, distribuídos sobre o diâmetro de 78 mm. O cubo tem diâmetro de 46 mm, sobressai 1,5 mm em relação às faces do aro (comprimento total de 51 mm) e termina em chanfro de 2 mm. O furo de Ø25 mm tem rasgo de chaveta de 8 mm, com 28,5 mm do fundo do rasgo à geratriz oposta do furo. A ligação da alma com o cubo e com o aro é feita com raios de 3 mm.
-
 
 \begin{figure}[H]
 \centering
@@ -11,14 +9,30 @@ A Figura~\ref{fig:desenho} reproduz o desenho da peça. Do ponto de vista da usi
 \fonte{Provenza (PROTEC).}
 \end{figure}
 
+A Tabela~\ref{tab:geomdente} reúne os dados do dentado usados no planejamento. A altura total do dente foi tomada igual à profundidade do perfil da fresa de disco escolhida (Seção~\ref{sec:F01}), de 2,25$\cdot$m = 13,5 mm. Com essa profundidade, a fresa deixa a espessura nominal do dente no diâmetro primitivo, que é conferida pela medida sobre 3 dentes.
+
+\begin{table}[H]
+\centering
+\caption{Dados do dentado}\label{tab:geomdente}
+{\small\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|l|c|l|}
+\hline
+\rowcolor{cinza} \textbf{Grandeza} & \textbf{Valor} & \textbf{Cálculo} \\ \hline
+Módulo m; número de dentes z; ângulo de pressão & 6 mm; 24; 20° & Desenho \\ \hline
+Diâmetro primitivo & 144 mm & m$\cdot$z \\ \hline
+Diâmetro externo & 156 mm & m$\cdot$(z + 2) \\ \hline
+Altura total do dente & 13,5 mm & 2,25$\cdot$m (perfil da fresa ZPS-FN 890070) \\ \hline
+Diâmetro de pé & 129 mm & 156 $-$ 2 $\cdot$ 13,5 \\ \hline
+Medida sobre 3 dentes (W\textsubscript{3}) & 46,30 mm & m$\cdot$cos $\alpha$ $\cdot$ [$\pi$(k $-$ 0,5) + z$\cdot$inv $\alpha$], k = 3 \\ \hline
+\end{tabular}}
+\fonte{Elaborado pelo grupo.}
+\end{table}
 
 \section{Material e especificações complementares}
 
-O SAE 8620 é um aço baixa liga ao níquel-cromo-molibdênio, com cerca de 0,20 \% de carbono, próprio para cementação. Laminado e recozido, com dureza entre 170 e 200 HB, tem boa usinabilidade e corresponde ao grupo P2.1 dos catálogos de ferramentas (aço baixa liga recozido, 175 HB), que foi a referência para os dados de corte. Para o cálculo das forças de corte, foram usados os coeficientes de Kienzle do próprio 8620 apresentados em aula, K\textsubscript{s1} = 2100 N/mm² e 1 $-$ z = 0,74.
-
+O SAE 8620 é um aço baixa liga ao níquel-cromo-molibdênio, com cerca de 0,20 \% de carbono, próprio para cementação. Laminado e recozido, com dureza entre 170 e 200 HB, tem boa usinabilidade e corresponde ao grupo P2.1 dos catálogos de ferramentas da Sandvik Coromant (aço baixa liga recozido, 175 HB), que foi a referência para os dados de corte. Para o cálculo das forças de corte foram usados os coeficientes de Kienzle do próprio 8620 tabelados na Aula 6\_1 (slide 26): K\textsubscript{s1} = 2100 N/mm² e 1 $-$ z = 0,74, levantados para $\sigma$\textsubscript{t} = 770 N/mm². Como o material recozido é menos resistente que o ensaiado, esses coeficientes ficam do lado seguro.
 
 O desenho traz apenas as cotas nominais. Para planejar o acabamento das superfícies funcionais, foram adotadas as especificações do Quadro~\ref{quad:espec}, coerentes com a função da peça. São elas que justificam a retificação do furo e das faces do cubo depois do tratamento térmico.
-
 
 \begin{quadro}[H]
 \centering
@@ -37,11 +51,9 @@ Demais superfícies & ISO 2768-m; Ra 6,3 \textmu{}m & Superfícies sem função 
 \fonte{Elaborado pelo grupo.}
 \end{quadro}
 
-
-\section{Matéria-prima}
+\section{Matéria-prima e sobremetais}
 
 A Tabela~\ref{tab:sobremetal} apresenta as dimensões adotadas no plano de fabricação. A diferença entre os diâmetros determina o material a remover no raio. Para as duas faces do cubo, a diferença de comprimento é distribuída igualmente entre elas.
-
 
 \begin{table}[H]
 \centering
@@ -58,14 +70,13 @@ Furo Ø25 (retificação interna, peça temperada) & $ (25 - 24,5)/2 $ & 0,25 mm
 \fonte{Elaborado pelo grupo a partir das dimensões do bruto, da peça torneada e da peça acabada.}
 \end{table}
 
+Os sobremetais de retificação (0,15 mm por face e 0,25 mm no raio do furo) são menores que a profundidade mínima da camada cementada (0,8 mm), de modo que a superfície retificada continua endurecida.
 
-O bruto é um tarugo serrado de Ø160 $\times$ 58 mm, com massa de 9,2 kg. A peça pronta tem cerca de 3,4 kg, com aproximadamente 63\% da massa do bruto removida na usinagem, principalmente nos rebaixos da alma e nos vãos dos dentes. A Figura~\ref{fig:bruto} mostra a seção da peça torneada sobreposta ao bruto.
-
+O bruto é um tarugo serrado de Ø160 $\times$ 58 mm, com massa de 9,2 kg. A peça pronta tem cerca de 3,4 kg, com aproximadamente 63\,\% da massa do bruto removida na usinagem, principalmente nos rebaixos da alma e nos vãos dos dentes. A Figura~\ref{fig:bruto} mostra a seção da peça torneada sobreposta ao bruto.
 
 \begin{figure}[H]
 \centering
 \caption{Seção da peça torneada sobreposta ao bruto}\label{fig:bruto}
-\includegraphics[width=10cm]{figuras/fig_bruto_peca.png}
+\includegraphics[width=9cm]{figuras/fig_bruto_peca.png}
 \fonte{Elaborado pelo grupo.}
 \end{figure}
-
