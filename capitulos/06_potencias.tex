@@ -16,7 +16,7 @@ A força de corte foi calculada pelo modelo de Kienzle (Aula 6\_1, slides 25 e 2
   P_{c} = \frac{F_{c} \cdot v_{c}}{60 \cdot 10^{3}}
 \end{equation}
 
-com F\textsubscript{c} em N, v\textsubscript{c} em m/min e P\textsubscript{c} em kW. Os coeficientes de Kienzle valem para ferramenta afiada. Para levar em conta o desgaste, a potência foi aumentada em 30\,\% (Aula 6\_1, slide 25), e a potência exigida do motor sai da divisão pelo rendimento $\eta$ da máquina (Aula 6, slide 19):
+com F\textsubscript{c} em N, v\textsubscript{c} em m/min e P\textsubscript{c} em kW. Os coeficientes de Kienzle valem para ferramenta afiada. Para levar em conta o desgaste, a potência foi aumentada em 30\,\% (Aula 6\_1, slide 25), e a potência exigida do motor sai da divisão pelo rendimento $\eta$ da máquina:
 
 \begin{equation}\label{eq:pm}
   P_{m} = \frac{1,3 \cdot P_{c}}{\eta}
@@ -55,9 +55,9 @@ Na furação, cada ponto da aresta corta uma vez por volta, com espessura h = f$
   P_{c} = \frac{K_{s} \cdot f \cdot D \cdot v_{c}}{240 \cdot 10^{3}} \qquad K_{s} = K_{s1} \cdot h^{-z}
 \end{equation}
 
-Para conferir, usamos a fórmula de Kronenberg da Aula 19 (slides 38 e 39), M\textsubscript{t} = C\textsubscript{1}$\cdot$D\textsuperscript{x1}$\cdot$f\textsuperscript{y1}. A tabela da aula não tem o 8620, e o aço mais próximo é o 1025 (C\textsubscript{1} = 37,9; x\textsubscript{1} = 1,87; y\textsubscript{1} = 0,77). Com ele o momento torsor é de 2089 kgf$\cdot$mm = 20,5 N$\cdot$m, contra 23,4 N$\cdot$m por Kienzle. A diferença vai no sentido esperado, já que o 8620 é mais resistente que o 1025, e mantivemos o valor de Kienzle, que usa os coeficientes do próprio material.
+Para conferir, usamos a fórmula de Kronenberg, M\textsubscript{t} = C\textsubscript{1}$\cdot$D\textsuperscript{x1}$\cdot$f\textsuperscript{y1}. A tabela da aula não tem o 8620, e o aço mais próximo é o 1025 (C\textsubscript{1} = 37,9; x\textsubscript{1} = 1,87; y\textsubscript{1} = 0,77). Com ele o momento torsor é de 2089 kgf$\cdot$mm = 20,5 N$\cdot$m, contra 23,4 N$\cdot$m por Kienzle. A diferença vai no sentido esperado, já que o 8620 é mais resistente que o 1025, e mantivemos o valor de Kienzle, que usa os coeficientes do próprio material.
 
-No fresamento (Aula 17, slides 25 a 27), usa-se a espessura média do cavaco h\textsubscript{m} e a pressão específica média K\textsubscript{sm}:
+No fresamento, usa-se a espessura média do cavaco h\textsubscript{m} e a pressão específica média K\textsubscript{sm}:
 
 \begin{equation}\label{eq:hm}
   h_{m} = f_{z} \cdot \frac{1 - \cos \varphi_{0}}{\varphi_{0}}
