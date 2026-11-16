@@ -277,7 +277,7 @@ def fig_op40():
     ax.plot([-49.65, -1.65], [64.5, 64.5], color=RED, lw=0.6, ls="--", zorder=5)
     note(ax, -60, 67, "vão\n(13,5 mm)", size=5.8, ha="right", color=RED)
     ax.add_patch(Rectangle((-80, -12.25), 104, 24.5, fc="0.85", ec="black", lw=0.7, zorder=4))
-    note(ax, 26, 0, "mandril Ø24,5", size=6)
+    note(ax, 36, 0, "mandril Ø24,5", size=6)
     ax.add_patch(Rectangle((-104, -30), 22, 60, fc="0.6", ec="black", lw=0.7, zorder=4))
     note(ax, -93, -34, "cabeçote divisor\n(relação 40:1)", ha="center", va="top")
     ax.add_patch(Polygon([(24, -6), (24, 6), (33, 0)], closed=True, fc="0.6", ec="black", lw=0.7, zorder=4))
@@ -296,10 +296,8 @@ def fig_op40():
     note(ax, cx + 42, cy + 48, "n = 60 rpm", size=6.2)
     path(ax, [(30, 86), (-85, 86)])
     note(ax, 32, 92, "avanço da mesa\nvf = 39,6 mm/min", size=6, color=RED, va="bottom")
-    path(ax, [(-85, 92), (-85, 172), (30, 172), (30, 92)], rapid=True)
-    note(ax, -28, 175, "retorno rápido e divisão de 15° entre vãos", size=6, color=RED, ha="center", va="bottom")
     axisline(ax, -110, 40)
-    setup(ax, (-110, 62), (-60, 185))
+    setup(ax, (-110, 72), (-60, 170))
     ax = axs[1]
     ax.set_title("(b) vista frontal – vão em usinagem", fontsize=7.2)
     to = tooth_outline()
@@ -317,13 +315,8 @@ def fig_op40():
     vao2 = [(r * math.cos(th + (g - psi(r))), r * math.sin(th + (g - psi(r)))) for r in rs[::-1]]
     ax.add_patch(Polygon(vao + vao2, closed=True, fc=REM, ec=RED, lw=1.0, zorder=5))
     note(ax, -14, 87, "perfil da fresa nº 4\n(21 a 25 dentes)", size=6, color=RED, ha="center", va="bottom")
-    ax.add_patch(Arc((0, 0), 118, 118, theta1=65, theta2=82, color=RED, lw=1.0))
-    ax.annotate("", xy=(59 * math.cos(math.radians(65)), 59 * math.sin(math.radians(65))),
-                xytext=(59 * math.cos(math.radians(68)), 59 * math.sin(math.radians(68))),
-                arrowprops=dict(arrowstyle="-|>", color=RED, lw=1.0, mutation_scale=8))
-    note(ax, 12, 40, "divisão de 15° = 40/24 volta\nda manivela (1 volta + 2/3)", size=5.9, color=RED)
     setup(ax, (-62, 72), (30, 102))
-    legenda(fig, ["corte", "rapido", "apoio", "fixacao", "removido"], y=-0.03)
+    legenda(fig, ["corte", "apoio", "fixacao", "removido"], y=-0.03)
     fig.tight_layout(w_pad=0.3)
     save(fig, "croqui_op40.png")
 
@@ -393,21 +386,27 @@ def fig_op50():
 
 # ------------------------------------------------------------------ operacao 60
 def fig_op60():
-    fig, ax = plt.subplots(figsize=(4.4, 3.9))
+    fig, ax = plt.subplots(figsize=(5.2, 4.0))
     vert_full(ax)
-    ax.add_patch(Rectangle((-90, -51.3 - 8), 180, 8, fc="0.75", ec="black", lw=0.7))
-    note(ax, 0, -62, "suporte da brochadeira, com pino de orientação em um rasgo em arco", ha="center", va="top", size=5.9)
-    ax.add_patch(Rectangle((-12.25, -51.3 - 8), 24.5, 66, fc="0.88", ec="black", lw=0.6, zorder=4))
-    note(ax, -3, -22, "bucha-guia Ø24,5", rot=90, ha="center", size=5.8)
-    ax.add_patch(Rectangle((2.7, -86), 9.52, 118, fc="white", ec=RED, lw=0.9, zorder=5))
-    ax.add_patch(Rectangle((12.25, -51.3), 3.5, 51.3, fc=REM, ec="black", lw=0.5, zorder=6))
-    note(ax, 18, 26, "brocha 8 mm (B01)\n+ calço de 1,27 mm\nnos 2º e 3º passes", size=6, color=RED, va="bottom")
-    path(ax, [(7.5, 44), (7.5, 34)], lw=1.4)
-    note(ax, -20, 40, "3 passes, curso ≈ 341 mm", size=6, color=RED, ha="right")
-    tri(ax, -40, -51.3, "up", s=2.6); tri(ax, 40, -51.3, "up", s=2.6)
-    tri(ax, -12.25, -12, "right", s=2.2)
-    legenda(fig, ["corte", "apoio", "removido"], y=-0.04)
-    setup(ax, (-92, 92), (-88, 60))
+    ax.add_patch(Rectangle((-90, -51.3 - 8), 180, 8, fc="0.75", ec="black", lw=0.8))
+    ax.add_patch(Rectangle((-12.25, -51.3 - 8), 24.5, 66, fc="0.88", ec="black", lw=0.7, zorder=4))
+    ax.add_patch(Rectangle((2.7, -84), 9.52, 116, fc="white", ec=RED, lw=1.1, zorder=5))
+    ax.add_patch(Rectangle((12.25, -51.3), 3.5, 51.3, fc=REM, ec="black", lw=0.6, zorder=6))
+    path(ax, [(7.5, 46), (7.5, 34)], lw=1.6)
+    tri(ax, -40, -51.3, "up", s=3.0); tri(ax, 40, -51.3, "up", s=3.0)
+    tri(ax, -12.25, -12, "right", s=2.6)
+    note(ax, 20, 40, "brocha 8 mm (B01)", size=8, color=RED)
+    note(ax, 20, 30, "3 passes: sem calço, depois\n+1 e +2 calços de 1,27 mm", size=7, color=RED)
+    note(ax, -88, 40, "rasgo de chaveta", size=7.5)
+    ax.annotate("", xy=(13.5, -20), xytext=(-40, 34),
+                arrowprops=dict(arrowstyle="-|>", color="0.2", lw=0.7, mutation_scale=8), zorder=9)
+    note(ax, -88, -68, "suporte com pino de orientação", size=7, va="top")
+    note(ax, 22, -68, "bucha-guia Ø24,5", size=7, va="top")
+    ax.annotate("", xy=(11, -55), xytext=(28, -67),
+                arrowprops=dict(arrowstyle="-", color="0.2", lw=0.6), zorder=9)
+    legenda(fig, ["corte", "apoio", "removido"], y=-0.05)
+    for t in fig.legends: [x.set_fontsize(7.5) for x in t.get_texts()]
+    setup(ax, (-92, 92), (-86, 56))
     save(fig, "croqui_op60.png")
 
 # ------------------------------------------------------------------ operacao 90
@@ -431,26 +430,32 @@ def fig_op90():
 
 # ------------------------------------------------------------------ operacao 100
 def fig_op100():
-    fig, ax = plt.subplots(figsize=(4.8, 3.6))
+    fig, ax = plt.subplots(figsize=(5.2, 4.2))
     prof = final_profile(0.0)
     section(ax, prof); section(ax, mirror(prof))
-    ax.add_patch(Rectangle((-74, -96), 12, 192, fc="0.65", ec="black", lw=0.7))
-    for s in (1, -1):
-        ax.add_patch(Rectangle((-62, s * 74 - (10 if s < 0 else 0)), 24, 10, fc="0.82", ec="black", lw=0.7))
-        ax.add_patch(Circle((-36, s * 72), 3.0, fc="#f2c94c", ec="black", lw=0.6, zorder=6))
-        clamp(ax, -36, s * 75.4, "down" if s > 0 else "up")
-        tri(ax, -51.3, s * 17, "right", s=2.4)
-    note(ax, -74, 101, "placa com 3 roletes no diâmetro primitivo;\nencosto na face A retificada", va="bottom")
-    ax.add_patch(Rectangle((-46, 12.25), 46, 0.25 * 3, fc=REM, ec="black", lw=0.4, zorder=6))
-    ax.add_patch(Rectangle((-46, -12.25 - 0.75), 46, 0.75, fc=REM, ec="black", lw=0.4, zorder=6))
-    ax.add_patch(Rectangle((-30, -10), 20, 20, fc="#efe6d6", ec="black", lw=0.7, zorder=7))
-    ax.add_patch(Rectangle((-10, -3), 78, 6, fc="0.8", ec="black", lw=0.6, zorder=7))
-    note(ax, 22, 6, "rebolo R02  Ø20 × 20, ns ≈ 28 650 rpm", va="bottom", size=6)
-    path(ax, [(-8, -22), (-44, -22)]); path(ax, [(-44, -22), (-8, -22)])
-    note(ax, 2, -22, "oscilação axial\n(curso 44,3 mm)", ha="left", size=6, color=RED)
-    axisline(ax, -80, 72)
+    ax.add_patch(Rectangle((-74, -96), 12, 192, fc="0.65", ec="black", lw=0.8))
+    for s_ in (1, -1):
+        ax.add_patch(Rectangle((-62, s_ * 74 - (10 if s_ < 0 else 0)), 24, 10, fc="0.82", ec="black", lw=0.8))
+        ax.add_patch(Circle((-36, s_ * 72), 3.2, fc="#f2c94c", ec="black", lw=0.7, zorder=6))
+        clamp(ax, -36, s_ * 75.6, "down" if s_ > 0 else "up", L=11)
+        tri(ax, -51.3, s_ * 17, "right", s=3.0)
+    note(ax, -76, 107, "placa com 3 roletes no diâmetro primitivo", size=7.5, va="bottom")
+    note(ax, -76, 98, "encosto na face A retificada", size=7.5, va="bottom")
+    ax.add_patch(Rectangle((-46, 12.25), 46, 0.75, fc=REM, ec="black", lw=0.5, zorder=6))
+    ax.add_patch(Rectangle((-46, -13.0), 46, 0.75, fc=REM, ec="black", lw=0.5, zorder=6))
+    ax.add_patch(Rectangle((-30, -10), 20, 20, fc="#efe6d6", ec="black", lw=0.8, zorder=7))
+    ax.add_patch(Rectangle((-10, -3), 80, 6, fc="0.8", ec="black", lw=0.7, zorder=7))
+    note(ax, 14, 32, "rebolo R02 Ø20 × 20", size=7.5)
+    note(ax, 14, 24, "ns ≈ 28.650 rpm", size=7.5)
+    ax.annotate("", xy=(-14, 9), xytext=(12, 28),
+                arrowprops=dict(arrowstyle="-", color="0.2", lw=0.6), zorder=9)
+    path(ax, [(-8, -30), (-44, -30)], lw=1.5); path(ax, [(-44, -30), (-8, -30)], lw=1.5)
+    note(ax, 14, -27, "oscilação axial", size=7.5, color=RED)
+    note(ax, 14, -35, "curso de 44,3 mm", size=7.5, color=RED)
+    axisline(ax, -80, 74)
     legenda(fig, ["corte", "apoio", "fixacao", "removido"], y=-0.04)
-    setup(ax, (-78, 74), (-100, 118))
+    for t in fig.legends: [x.set_fontsize(7.5) for x in t.get_texts()]
+    setup(ax, (-80, 76), (-100, 116))
     save(fig, "croqui_op100.png")
 
 # ------------------------------------------------------------------ bruto x peca torneada
@@ -462,12 +467,12 @@ def fig_bruto():
     section(ax, prof); section(ax, mirror(prof))
     axisline(ax, -62, 12)
     dim(ax, (-54.65, 88), (3.35, 88), "bruto 58")
-    dim(ax, (-51.3, -88), (0, -88), "cubo torneado 51,3", side=-1.3)
+    dim(ax, (-51.3, -5), (0, -5), "cubo 51,3", side=-1.0, size=6)
     note(ax, 8, 80, "Ø160 (bruto)", size=6)
     note(ax, 8, 70, "Ø156", size=6)
-    note(ax, 8, -14, "furo Ø24,5", size=6)
+    note(ax, 8, -20, "furo Ø24,5", size=6)
     legenda(fig, ["removido"], y=-0.04)
-    setup(ax, (-64, 40), (-100, 100))
+    setup(ax, (-64, 40), (-84, 100))
     save(fig, "fig_bruto_peca.png")
 
 if __name__ == "__main__":
