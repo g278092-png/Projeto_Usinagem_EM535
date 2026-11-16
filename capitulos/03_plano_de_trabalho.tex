@@ -2,7 +2,7 @@
 
 \section{Sequência de operações}
 
-O Quadro~\ref{quad:seq} resume a sequência de fabricação da peça. O torneamento, em duas fixações (operações 20 e 30), gera todas as superfícies de revolução, inclusive o furo, que é furado e mandrilado no próprio torno. Depois vêm o fresamento dos dentes, o dos rasgos em arco e o brochamento do rasgo de chaveta, todos com o material ainda recozido. Por fim, a peça é rebarbada, vai para o tratamento térmico e volta para a retificação das faces do cubo e do furo. São cinco processos de usinagem: torneamento, furação, fresamento, brochamento e retificação.
+O Quadro~\ref{quad:seq} resume a sequência. O torneamento, em duas fixações (operações 20 e 30), gera todas as superfícies de revolução, inclusive o furo. Em seguida vêm o fresamento dos dentes, o fresamento dos rasgos em arco e o brochamento do rasgo de chaveta, ainda com o material recozido. Depois da rebarbação e do tratamento térmico, as faces do cubo e o furo são retificados.
 
 \begin{quadro}[H]
 \centering
@@ -26,59 +26,37 @@ O Quadro~\ref{quad:seq} resume a sequência de fabricação da peça. O torneame
 \fonte{Elaborado pelo grupo.}
 \end{quadro}
 
-Para os dentes haviam duas alternativas: fresar com fresa de disco de perfil evolvente em uma fresadora universal ou gerar com fresa caracol em uma fresadora de engrenagens. Ficamos com a fresa de disco, que usa uma máquina comum em ferramentarias e serve bem a lotes pequenos. A fresa caracol, comparada na Seção~\ref{sec:caracol}, seria a escolha para produções com maior volume.
+Três pontos definiram essa ordem. O furo e a face A do cubo são usinados na mesma fixação e servem de referência para todas as operações seguintes. Todo o corte com ferramenta de geometria definida acontece antes do tratamento térmico, já que as ferramentas de aço rápido e de metal duro escolhidas não cortam o aço temperado. E o furo é retificado por último, com a peça centrada pelos dentes, para que fique concêntrico ao dentado.
 
-\section{Justificativa da ordem das operações}
+Para os dentes, a alternativa à fresa de disco seria a fresa caracol, comparada na Seção~\ref{sec:caracol}.
 
-O Quadro~\ref{quad:ordem} explica o motivo da ordem de cada operação selecionada. Dentro do torneamento, todo o desbaste (faceamento, torneamento externo, furação e rebaixo) vem antes do acabamento. Os esforços e o calor do desbaste, então, não deformam nem marcam superfícies já acabadas, e a peça não escorrega nas castanhas depois que as referências foram geradas. O mandrilamento fecha a operação 20: furo e face A do cubo saem da mesma fixação, sem soltar a peça.
+\section{Fixação e croquis}
 
-\begin{quadro}[H]
-\centering
-\caption{Justificativa da posição de cada operação na sequência}\label{quad:ordem}
-{\small\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{|c|>{\raggedright\arraybackslash}p{13.3cm}|}
-\hline
-\rowcolor{cinza} \textbf{Op.} & \textbf{Por que nesta posição} \\ \hline
-20 & Gera as referências do processo (face A do cubo e furo) na mesma fixação. \\ \hline
-30 & Só pode ser feita depois da 20, porque usa o Ø156 já torneado para centrar a peça e a face A para encostá-la. Garante o paralelismo entre as faces do cubo. \\ \hline
-40 & Precisa do furo (mandril) e da face A (encosto). Fica antes do tratamento térmico, pois a fresa de aço rápido não corta o aço temperado. \\ \hline
-50 & Depois da 40, para que a alma ainda esteja inteira, e portanto mais rígida, durante o fresamento dos dentes. Precisa vir antes da 60, porque um dos rasgos orienta a peça no brochamento. \\ \hline
-60 & Depende do furo (bucha-guia) e de um rasgo em arco (orientação). A brocha de aço rápido também exige o material recozido. \\ \hline
-70 & Remove as rebarbas de todas as operações de corte e confere a espessura dos dentes enquanto a peça ainda pode ser corrigida. \\ \hline
-80 & Depois de todo o corte com ferramenta de geometria definida. \\ \hline
-90 & Retifica primeiro as faces do cubo, apoiando uma na outra, para criar uma face A retificada que servirá de encosto na operação 100. \\ \hline
-100 & Por último, com a peça centrada pelo diâmetro primitivo. Corrige a distorção do tratamento térmico e deixa o furo concêntrico ao dentado e perpendicular à face A. \\ \hline
-\end{tabular}}
-\fonte{Elaborado pelo grupo.}
-\end{quadro}
+Na operação 30 a peça é presa pelo Ø156 já torneado, em castanhas moles, com a face A apoiada em um anel de encosto. Nas operações 40, 50 e 60 ela é localizada pelo furo, com mandril ou pino, e pela face A. Na retificação, cada face do cubo é retificada apoiada na outra, e o furo, com a peça centrada pelo diâmetro primitivo.
 
-\section{Referências e fixação}
-
-A face A do cubo e o furo, usinados juntos na operação 20, são as referências de todo o processo. Na operação 30 a peça é presa pelo Ø156 já torneado, em castanhas moles usinadas no próprio torno, e encosta a face A em um anel. Com isso as duas faces do cubo ficam paralelas. Nas operações 40, 50 e 60 a peça é localizada pelo furo (mandril ou pino) e pela face A. Depois do tratamento térmico, cada face do cubo é retificada apoiada na outra. Por último o furo é retificado com a peça centrada pelo diâmetro primitivo, em uma placa com roletes entre os dentes. É assim que o furo final fica concêntrico ao dentado, o requisito funcional mais importante da engrenagem.
-
-Nos croquis, a peça aparece em corte (meia-seção no torneamento), com a seção hachurada e o material removido na operação em vermelho claro. A trajetória de corte está em vermelho contínuo e os movimentos rápidos em vermelho tracejado. Os triângulos marcam apoios e referências, e as setas pretas, a força de fixação. As trajetórias são esquemáticas e foram afastadas um pouco das superfícies para ficarem legíveis.
+Nos croquis, a peça aparece em corte, com o material removido na operação em vermelho claro. A trajetória de corte está em vermelho contínuo e os movimentos rápidos em vermelho tracejado; os triângulos indicam apoios e referências, e as setas pretas, a fixação.
 
 \section{Descrição das operações}
 
 \subsection*{Operação 10 – Inspeção do bruto}
 \addcontentsline{toc}{subsection}{Operação 10 – Inspeção do bruto}
 
-Na bancada, conferem-se o diâmetro (Ø160), o comprimento (58 mm) e a dureza (170 a 200 HB) da barra serrada, com paquímetro e durômetro.
+Conferência do diâmetro (Ø160), do comprimento (58 mm) e da dureza (170 a 200 HB) da barra serrada, na bancada, com paquímetro e durômetro.
 
 \subsection*{Operação 20 – Torneamento do lado A}
 \addcontentsline{toc}{subsection}{Operação 20 – Torneamento do lado A}
 
-A peça é presa pelo diâmetro bruto em placa de três castanhas duras, com 15 mm de peça, no torno CNC ROMI Centur 35D (Figura~\ref{fig:op20}). Todas as etapas usam emulsão de óleo solúvel:
+Torno CNC ROMI Centur 35D, peça presa pelo Ø160 bruto em placa de três castanhas duras, com 15 mm de pega, e emulsão como fluido de corte (Figura~\ref{fig:op20}).
 
 \begin{enumerate}[label=20.\arabic*]
-\item Faceamento de desbaste da face A em dois passes de 1,425 mm, até o centro (T01).
-\item Torneamento externo de desbaste de Ø160 para Ø157, ao longo de 36 mm a partir da face (T01).
-\item Desbaste do degrau do aro em dois passes de 0,825 mm, de Ø157 até Ø47, que formam o ressalto do cubo (T01).
-\item Furação passante com broca de Ø23 mm (T03).
-\item Desbaste do rebaixo da alma, entre Ø46 e Ø110 e com 17 mm de profundidade a partir da face do aro, com ferramenta de canal frontal: oito mergulhos axiais, do diâmetro maior para o menor, com passo radial de 3,77 mm. Os mergulhos deixam 0,3 mm nas paredes e no fundo. Os dois junto às paredes param 3 mm antes do fundo, para não invadir os raios de 3 mm (T05).
-\item Acabamento do contorno externo: Ø156, face do aro, Ø46 com o chanfro de 2 mm e face do cubo, deixando 0,15 mm na face do cubo para a retificação (T02).
-\item Passe de contorno do rebaixo: parede do Ø110, raio R3, fundo, raio R3 e parede do Ø46 (T05).
-\item Mandrilamento do furo para Ø24,5 mm, que deixa 0,25 mm no raio para a retificação interna, e chanfro de 0,5 $\times$ 45° (T04).
+\item Facear a face A em dois passes de 1,425 mm, até o centro (T01).
+\item Tornear de Ø160 para Ø157 em 36 mm de comprimento (T01).
+\item Desbastar o degrau do aro de Ø157 até Ø47, com 1,65 mm de profundidade em dois passes (T01).
+\item Furar Ø23 passante (T03).
+\item Desbastar o rebaixo da alma (Ø46 a Ø110, 17 mm de profundidade) com oito mergulhos axiais, deixando 0,3 mm nas paredes e no fundo (T05).
+\item Acabar o Ø156, a face do aro, o Ø46 com o chanfro de 2 mm e a face do cubo, deixando 0,15 mm na face do cubo para a retificação (T02).
+\item Acabar o contorno do rebaixo: paredes, raios R3 e fundo (T05).
+\item Mandrilar o furo para Ø24,5 e chanfrar 0,5 $\times$ 45° (T04).
 \end{enumerate}
 
 \begin{figure}[H]
@@ -91,16 +69,16 @@ A peça é presa pelo diâmetro bruto em placa de três castanhas duras, com 15 
 \subsection*{Operação 30 – Torneamento do lado B}
 \addcontentsline{toc}{subsection}{Operação 30 – Torneamento do lado B}
 
-A peça é virada e presa pelo Ø156 em castanhas moles usinadas no próprio torno, com a face A do cubo apoiada em um anel de encosto (Figura~\ref{fig:op30}). As etapas repetem as da operação 20, com as mesmas ferramentas e parâmetros:
+Mesmo torno, peça virada e presa pelo Ø156 em castanhas moles, com a face A no anel de encosto (Figura~\ref{fig:op30}). As etapas repetem as da operação 20, com as mesmas ferramentas e parâmetros.
 
 \begin{enumerate}[label=30.\arabic*]
-\item Faceamento de desbaste da face B em dois passes de 1,425 mm, até o furo (T01).
-\item Torneamento externo de desbaste do Ø160 restante, que estava sob as castanhas na operação 20.
-\item Desbaste do degrau do aro do lado B, em dois passes de 0,825 mm (T01).
-\item Desbaste do rebaixo do lado B com oito mergulhos (T05).
-\item Acabamento do contorno externo do lado B, até o comprimento de 51,3 mm no cubo (T02).
-\item Passe de contorno do rebaixo do lado B (T05).
-\item Chanfro de 0,5 $\times$ 45° no furo, lado B (T04).
+\item Facear a face B em dois passes de 1,425 mm, até o furo (T01).
+\item Tornear para Ø157 o trecho de 16 mm que estava sob as castanhas (T01).
+\item Desbastar o degrau do aro do lado B, em dois passes (T01).
+\item Desbastar o rebaixo do lado B com oito mergulhos (T05).
+\item Acabar o contorno externo do lado B, levando o cubo a 51,3 mm (T02).
+\item Acabar o contorno do rebaixo do lado B (T05).
+\item Chanfrar o furo 0,5 $\times$ 45° no lado B (T04).
 \end{enumerate}
 
 \begin{figure}[H]
@@ -113,7 +91,7 @@ A peça é virada e presa pelo Ø156 em castanhas moles usinadas no próprio tor
 \subsection*{Operação 40 – Fresamento dos dentes}
 \addcontentsline{toc}{subsection}{Operação 40 – Fresamento dos dentes}
 
-A peça vai em um mandril de Ø24,5 mm, encostada pela face A e presa por porca, entre o cabeçote divisor e a contraponta da fresadora universal KNUTH UWF 5 (Figura~\ref{fig:op40}). A fresa de disco de módulo 6 nº 4, que serve para engrenagens de 21 a 25 dentes, é centrada no eixo da peça, e cada vão é cortado com a mesa avançando paralela a esse eixo. Primeiro desbastamos todos os vãos com 12,6 mm de profundidade (2,1$\cdot$m, o máximo por passe indicado pelo fabricante da fresa). Depois todos são acabados na profundidade total do perfil, 13,5 mm. Antes de acabar a volta inteira, a profundidade é ajustada pela medida sobre 3 dentes (W\textsubscript{3} = 46,30 mm nominal), descontada a folga desejada com a cremalheira
+Fresadora universal KNUTH UWF 5, peça montada em mandril de Ø24,5 mm entre o cabeçote divisor e a contraponta, encostada pela face A e presa por porca (Figura~\ref{fig:op40}). Com a fresa de disco de módulo 6 nº 4 centrada no eixo da peça, cada vão é cortado com avanço da mesa paralelo a esse eixo. Primeiro todos os vãos são desbastados com 12,6 mm de profundidade; depois são acabados na profundidade total de 13,5 mm, ajustada pela medida sobre 3 dentes (W\textsubscript{3} = 46,30 mm). Entre um vão e outro, o cabeçote divisor gira a peça 15° (1 2/3 volta da manivela). Fluido: óleo integral.
 
 \begin{figure}[H]
 \centering
@@ -125,43 +103,41 @@ A peça vai em um mandril de Ø24,5 mm, encostada pela face A e presa por porca,
 \subsection*{Operação 50 – Fresamento dos rasgos em arco}
 \addcontentsline{toc}{subsection}{Operação 50 – Fresamento dos rasgos em arco}
 
-No centro de usinagem vertical ROMI D 800, a peça é centrada por um pino de Ø24,5 mm, apoiada pela face do cubo em uma placa-base e presa por porca e arruela (Figura~\ref{fig:op50}). A fresa de topo de Ø16 mm entra em rampa de 5° pela linha de centro do rasgo, no R39. O arco de 45° tem só 30,6 mm, e descer 5 mm em rampa de 5° pede 57,2 mm de percurso. Por isso a fresa vai e volta sobre o arco, sempre descendo, até chegar ao nível. São três níveis, de 5, 5 e 4,5 mm; no último a fresa passa 0,5 mm além dos 14 mm da alma. Em cada nível a fresa percorre a linha de centro e depois faz o contorno com 1 mm de penetração lateral, o que deixa o rasgo com 18 mm de largura e extremidades de raio 9 mm. O corte é a seco, com ar comprimido para tirar os cavacos, como se recomenda no fresamento com metal duro (Aula 20).
+Centro de usinagem vertical ROMI D 800, peça centrada por um pino de Ø24,5 mm, apoiada pela face do cubo e presa por porca e arruela (Figura~\ref{fig:op50}). A fresa de topo de Ø16 mm desce em rampa de 5° indo e voltando sobre a linha de centro do rasgo (R39), em três níveis de 5, 5 e 4,5 mm, até atravessar a alma. Em cada nível, um passe de contorno com 1 mm de penetração lateral leva o rasgo à largura de 18 mm, com extremidades de raio 9 mm. Corte a seco, com ar comprimido para retirar os cavacos.
 
 \begin{figure}[H]
 \centering
 \caption{Croqui da operação 50 – fresamento dos rasgos em arco}\label{fig:op50}
 \includegraphics[width=\linewidth]{figuras/croqui_op50.png}
-
-{\small Rampa sobre o arco R39, em ida e volta. Profundidades acumuladas de 5, 10 e 14,5 mm (14 mm de material e 0,5 mm de saída), com contorno em cada nível.\par}
 \fonte{Elaborado pelo grupo.}
 \end{figure}
 
 \subsection*{Operação 60 – Brochamento do rasgo de chaveta}
 \addcontentsline{toc}{subsection}{Operação 60 – Brochamento do rasgo de chaveta}
 
-O rasgo de 8 mm é brochado na brochadeira vertical Nargesa BM25, com a brocha guiada por uma bucha de Ø24,5 mm encaixada no furo (Figura~\ref{fig:op60}). A peça se apoia pela face A em um suporte com um pino que entra em um dos rasgos em arco, o que fixa a posição da chaveta em relação aos rasgos. São três passes: o primeiro só com a brocha e os outros dois com um calço de 1,27 mm a mais em cada, até o fundo do rasgo ficar a 16 mm do eixo do furo (28,5 mm até a parede oposta do furo acabado, na direção da cota). Como essa cota parte do eixo, ela não muda quando o furo é retificado para Ø25. O fluido é óleo integral de alta viscosidade (Aula 20).
+Brochadeira vertical Nargesa BM25, brocha guiada por uma bucha de Ø24,5 mm no furo, peça apoiada pela face A em um suporte com pino que entra em um dos rasgos em arco (Figura~\ref{fig:op60}). O rasgo de 8 mm é feito em três passes, o primeiro sem calço e os outros dois com um calço de 1,27 mm a mais em cada, até o fundo ficar a 16 mm do eixo do furo. Fluido: óleo integral.
 
 \begin{figure}[H]
 \centering
 \caption{Croqui da operação 60 – brochamento do rasgo de chaveta}\label{fig:op60}
-\includegraphics[width=8.2cm]{figuras/croqui_op60.png}
+\includegraphics[width=11cm]{figuras/croqui_op60.png}
 \fonte{Elaborado pelo grupo.}
 \end{figure}
 
 \subsection*{Operação 70 – Rebarbação e inspeção intermediária}
 \addcontentsline{toc}{subsection}{Operação 70 – Rebarbação e inspeção intermediária}
 
-Na bancada, as rebarbas dos dentes, dos rasgos e da chaveta são tiradas com lima, e a espessura dos dentes é conferida pela medida sobre 3 dentes com micrômetro de pratos.
+Remoção das rebarbas dos dentes, dos rasgos e da chaveta com limas, e conferência da espessura dos dentes pela medida sobre 3 dentes, com micrômetro de pratos, na bancada.
 
 \subsection*{Operação 80 – Tratamento térmico}
 \addcontentsline{toc}{subsection}{Operação 80 – Tratamento térmico}
 
-Cementação, têmpera e revenimento.
+Cementação, têmpera e revenimento em fornecedor externo, conforme o Quadro~\ref{quad:espec}.
 
 \subsection*{Operação 90 – Retificação plana das faces do cubo}
 \addcontentsline{toc}{subsection}{Operação 90 – Retificação plana das faces do cubo}
 
-Na retificadora plana KNUTH HFS 3063 F Advance, a peça fica sobre a mesa magnética apoiada em uma face do cubo, e a face oposta é retificada. Depois ela é virada, e a outra face leva o cubo a 51,00 mm (Figura~\ref{fig:op90}). Como o cubo sai além do aro, só as faces do cubo tocam o rebolo. Em cada face são 7 passes de desbaste de 0,02 mm, 2 de acabamento de 0,005 mm e 2 sem penetrar a peça.
+Retificadora plana KNUTH HFS 3063 F Advance, peça na mesa magnética apoiada por uma face do cubo (Figura~\ref{fig:op90}). Retifica-se uma face, a peça é virada e a outra face leva o cubo a 51,00 mm. Em cada face: 7 passes de 0,02 mm, 2 passes de 0,005 mm e 2 passes sem penetração (faiscamento).
 
 \begin{figure}[H]
 \centering
@@ -173,20 +149,24 @@ Na retificadora plana KNUTH HFS 3063 F Advance, a peça fica sobre a mesa magné
 \subsection*{Operação 100 – Retificação interna do furo}
 \addcontentsline{toc}{subsection}{Operação 100 – Retificação interna do furo}
 
-Na retificadora interna STUDER S121, a peça é centrada pelo diâmetro primitivo em uma placa com três roletes calibrados entre os dentes e apoiada na face A já retificada (Figura~\ref{fig:op100}). O furo passa de Ø24,5 para Ø25 H7 com rebolo de Ø20 mm, em retificação de passagem com oscilação axial. Os últimos passes são de faiscamento, sem penetração.
+Retificadora interna STUDER S121, peça centrada pelo diâmetro primitivo em uma placa com três roletes entre os dentes e apoiada na face A retificada (Figura~\ref{fig:op100}). O furo é retificado de Ø24,5 para Ø25 H7 com rebolo de Ø20 mm e oscilação axial, terminando com passes de faiscamento.
 
 \begin{figure}[H]
 \centering
 \caption{Croqui da operação 100 – retificação interna do furo}\label{fig:op100}
-\includegraphics[width=9.5cm]{figuras/croqui_op100.png}
+\includegraphics[width=11cm]{figuras/croqui_op100.png}
 \fonte{Elaborado pelo grupo.}
 \end{figure}
 
 \subsection*{Operação 110 – Inspeção final}
 \addcontentsline{toc}{subsection}{Operação 110 – Inspeção final}
 
-Verificam-se o furo (calibrador tampão Ø25 H7), o comprimento do cubo, a medida sobre 3 dentes, o batimento do dentado em relação ao furo, a dureza superficial e a rugosidade das superfícies retificadas.
+Verificação do furo (calibrador tampão Ø25 H7), do comprimento do cubo, da medida sobre 3 dentes, do batimento do dentado em relação ao furo, da dureza superficial e da rugosidade das superfícies retificadas.
 
 \section{Comparação com a geração por fresa caracol}\label{sec:caracol}
 
-Na fresadora de engrenagens LIEBHERR LC 180, que aceita peças de até 180 mm de diâmetro, uma fresa caracol de Ø100 mm a 120 m/min (382 rpm), com avanço axial de 2,5 mm por volta da peça, cortaria os 24 dentes em cerca de 2,2 min. Com a fresa de disco são 105 min. O perfil gerado pela caracol é exato para qualquer número de dentes; o da fresa de disco nº 4 só é exato para 21 dentes. O módulo 6 está no limite da máquina: a página do produto fala em módulo até 6 mm, mas o folheto da versão $\alpha$ diz 5 mm (LIEBHERR, 2026), e isso teria de ser confirmado com o fabricante. Para um lote pequeno, a fresa caracol e a máquina dedicada não se pagam, e a fresa de disco atende à qualidade adotada para os dentes.
+Existe outra forma de cortar os dentes: a geração com fresa caracol, em uma fresadora de engrenagens. A fresa caracol tem a forma de um parafuso sem-fim com a aresta de corte em perfil de cremalheira. Ela e a peça giram sincronizadas, como se estivessem engrenadas, e a fresa vai gerando todos os dentes ao mesmo tempo enquanto avança ao longo da largura da peça. Com a fresa de disco, ao contrário, cada vão é cortado separadamente, em dois passes, com uma divisão manual entre eles.
+
+Para comparar os tempos, consideramos a fresadora de engrenagens LIEBHERR LC 180, que aceita peças de até 180 mm de diâmetro, com uma fresa caracol de Ø100 mm a 120 m/min (382 rpm). Com uma fresa de uma entrada, a peça gira 1/24 de volta a cada volta da fresa, isto é, a 15,9 rpm. Com avanço axial de 2,5 mm por volta da peça, a fresa avança cerca de 40 mm/min e percorre os 87 mm de largura, entrada e saída em 2,2 min. Na fresa de disco, o avanço da mesa é praticamente o mesmo (39,6 mm/min), mas o percurso se repete 48 vezes (24 vãos, cada um com desbaste e acabamento), o que dá 105 min.
+
+A fresa caracol também gera o perfil evolvente exato para qualquer número de dentes, enquanto a fresa de disco nº 4 tem o perfil calculado para 21 dentes e serve, com um pequeno erro, de 21 a 25. Mesmo assim, ficamos com a fresa de disco. Para um lote de 10 peças, o ganho de tempo não paga uma fresa caracol específica para módulo 6 nem uma máquina dedicada, e a fresa de disco atende à qualidade adotada para os dentes (DIN 3962, qualidade 9 a 10). Há ainda uma dúvida sobre a própria LC 180: a página do produto indica módulo até 6 mm, mas o folheto da versão $\alpha$ indica 5 mm (LIEBHERR, 2026). Em produção seriada, a escolha deveria ser revista.
