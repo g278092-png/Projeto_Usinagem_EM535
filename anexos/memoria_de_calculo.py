@@ -127,7 +127,9 @@ def plano_torno(tag, f_desb, f_reb):
     p = turn(1.425, f_desb, 300, 95, 160, face=(82, 0))
     p["tc"] = R(2 * p["tc"], 3); o["20.1"] = p
     o["20.2"] = turn(1.5, f_desb, 280, 95, 160, lf=lf_ext_A)
-    o["20.3"] = turn(1.15, f_desb, 300, 95, 157, face=(80, 23.5))
+    # degrau do aro: 5,0 - 2,85 (faceamento) - 0,5 (acabamento) = 1,65 mm, em 2 passes de 0,825 mm
+    p = turn(0.825, f_desb, 300, 95, 157, face=(80, 23.5))
+    p["tc"] = R(2 * p["tc"], 3); p["passes"] = 2; o["20.3"] = p
     # furacao O23 (CoroDrill 880, KAPR 88 graus)
     D, fn, vc = 23.0, 0.09, 150.0
     h = fn * math.sin(math.radians(88))
@@ -176,7 +178,8 @@ def plano_torno(tag, f_desb, f_reb):
     p = turn(1.425, f_desb, 300, 95, 160, face=(82, 11.25))
     p["tc"] = R(2 * p["tc"], 3); o["30.1"] = p
     o["30.2"] = turn(1.5, f_desb, 280, 95, 160, lf=lf_ext_B)
-    o["30.3"] = turn(1.15, f_desb, 300, 95, 157, face=(80, 23.5))
+    p = turn(0.825, f_desb, 300, 95, 157, face=(80, 23.5))
+    p["tc"] = R(2 * p["tc"], 3); p["passes"] = 2; o["30.3"] = p
     o["30.4"] = dict(reb, tc=R(t_merg, 3))
     o["30.5"] = turn(0.5, 0.15, 400, 93, 157, face=(80.5, 11.25), extra=lf_ext_B / (0.15 * n_de(400, 157)))
     o["30.6"] = dict(f=0.10, vc=vcg, perc=R(perc, 1), tc=R(t_cont, 3))

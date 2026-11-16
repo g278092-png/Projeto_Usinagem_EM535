@@ -2,7 +2,7 @@
 
 \section{Equações utilizadas}
 
-Os parâmetros foram calculados com as relações da Aula 2 (slides 35 e 36). A rotação é obtida da velocidade de corte e do diâmetro, e a velocidade de avanço, do avanço por volta ou por dente:
+Os parâmetros vêm das relações da Aula 2 (slides 35 e 36). A rotação sai da velocidade de corte e do diâmetro, e a velocidade de avanço, do avanço por volta ou por dente:
 
 \begin{equation}\label{eq:n}
   n = \frac{1000 \cdot v_{c}}{\pi \cdot d}
@@ -22,7 +22,7 @@ em que n é a rotação (rpm), v\textsubscript{c} a velocidade de corte (m/min),
   R_{\text{máx}} = \frac{f^{2}}{8 \cdot r_{\varepsilon}}
 \end{equation}
 
-No fresamento com pequena penetração lateral, o cavaco fica mais fino que o avanço por dente. A espessura máxima do cavaco foi calculada com o ângulo de contato $\varphi$\textsubscript{0} (Aula 17):
+No fresamento com pequena penetração lateral, o cavaco fica mais fino que o avanço por dente. A espessura máxima do cavaco foi calculada pelo ângulo de contato $\varphi$\textsubscript{0} (Aula 17):
 
 \begin{equation}\label{eq:phi0}
   \cos \varphi_{0} = 1 - \frac{2 \cdot a_{e}}{D}
@@ -34,7 +34,7 @@ No fresamento com pequena penetração lateral, o cavaco fica mais fino que o av
 
 \section{Critério de escolha}
 
-Os valores de partida foram tirados dos catálogos para o grupo P2.1 (Tabela~\ref{tab:catalogo}). No torno, porém, a potência e o torque disponíveis limitam esses valores. O Centur 35D tem motor de 11\,kW (regime S6 -- 40\,\%) e torque máximo de cerca de 320\,N$\cdot$m (lido no gráfico do catálogo), e só fornece a potência máxima acima de cerca de 330\,rpm. Como a peça tem Ø160\,mm, o desbaste ocorre entre 550 e 600\,rpm, já na faixa de potência máxima. Como critério, nenhuma operação deve passar de 90\,\% da potência disponível (Seção~\ref{sec:crit90}).
+Os valores de partida são os dos catálogos para o grupo P2.1 (Tabela~\ref{tab:catalogo}). No torno, quem limita esses valores é a potência e o torque disponíveis. O Centur 35D tem motor de 11\,kW (regime S6 -- 40\,\%) e torque máximo de cerca de 320\,N$\cdot$m (lido no gráfico do catálogo), e só entrega a potência máxima acima de uns 330\,rpm. Com a peça de Ø160\,mm, o desbaste roda entre 550 e 600\,rpm, já na faixa de potência máxima. O critério é não passar de 90\,\% da potência disponível em nenhuma operação (Seção~\ref{sec:crit90}).
 
 \begin{table}[H]
 \centering
@@ -47,14 +47,14 @@ T01 CNMG 12 04 08-PM 4425 & a\textsubscript{p} 3 (0,5–5,5) mm; f 0,3 (0,15–0
 T02 DNMG 15 06 04-PF 4425\textsuperscript{a} & a\textsubscript{p} 0,4 (0,25–1,5) mm; f 0,15 (0,07–0,3) mm; v\textsubscript{c} 400 (335–450) m/min & a\textsubscript{p} 0,5 mm; f 0,15 mm; v\textsubscript{c} 400 m/min & Valores de partida \\ \hline
 T03 880, pastilha periférica\textsuperscript{b} & f 0,11 (0,06–0,14) mm; v\textsubscript{c} 200 (150–235) m/min & f 0,09 mm; v\textsubscript{c} 150 m/min & Potência do torno; v\textsubscript{c} no limite inferior da faixa \\ \hline
 T04 DCMT 07 02 04-PF 4425 & a\textsubscript{p} 0,3 (0,1–1,7) mm; f 0,08 (0,05–0,16) mm; v\textsubscript{c} 445 (395–465) m/min & a\textsubscript{p} 0,75 mm; f 0,10 mm; v\textsubscript{c} 231 m/min & n limitado a 3000 rpm; a\textsubscript{p} definido pelo sobremetal \\ \hline
-T05 N123J2-0500-0004-GM 4325 & f de 0,07 a 0,19 mm (faixa da pastilha); v\textsubscript{c} não informado na fonte consultada & f 0,12 mm; v\textsubscript{c} 160 m/min & Valor inicial de 180 m/min reduzido pela potência \\ \hline
+T05 N123J2-0500-0004-GM 4325 & f de 0,07 a 0,19 mm (faixa da pastilha); v\textsubscript{c} não informado na fonte consultada & f 0,12 mm; v\textsubscript{c} 160 m/min & Valor inicial de 180 m/min, adotado pelo grupo, reduzido pela potência \\ \hline
 F01 ZPS-FN 890070.06004 & Aço até 850 N/mm²: v\textsubscript{c} 15 m/min, f\textsubscript{z} 0,055 mm; até 600 N/mm²: v\textsubscript{c} 20 m/min, f\textsubscript{z} 0,066 mm; a\textsubscript{e} 2,1$\cdot$m por passe & v\textsubscript{c} 18,8 m/min (60 rpm); f\textsubscript{z} 0,055 mm; a\textsubscript{e} 12,6 mm & Rotação mínima da fresadora \\ \hline
 F02 R390-11 T3 08M-PM 1130 & f\textsubscript{z} 0,12 (0,08–0,2) mm; h\textsubscript{ex} 0,12 (0,08–0,2) mm; v\textsubscript{c} 275 (265–280) m/min & f\textsubscript{z} 0,10 mm (canal) e 0,20 mm (contorno); v\textsubscript{c} 275 m/min & Canal com a largura total; h\textsubscript{ex} no contorno \\ \hline
 \end{tabular}}
 \fonte{Sandvik Coromant (2026a) e ZPS-FN (2026), grupo P2.1 (175 HB). \textsuperscript{a}~Dados da mesma geometria e classe na pastilha WNMG 06 04 04-PF 4425. \textsuperscript{b}~Dados da mesma geometria e classe no tamanho 03.}
 \end{table}
 
-A Tabela~\ref{tab:verif} mostra a potência que o torno precisaria fornecer com os valores de partida, calculada como no Capítulo~\ref{cap:pot}. Eles excedem a máquina no faceamento em passe único, no torneamento externo de desbaste e na furação, e deixam o rebaixo frontal em 97\,\% da potência. Por isso o avanço de desbaste foi reduzido de 0,30 para 0,28\,mm/volta, o faceamento foi dividido em dois passes de 1,425\,mm, a furação passou a f = 0,09\,mm/volta e v\textsubscript{c} = 150\,m/min, e o rebaixo ficou com o avanço de 0,12\,mm/volta e a velocidade reduzida para 160\,m/min.
+A Tabela~\ref{tab:verif} mostra a potência que o torno teria de fornecer com os valores de partida, calculada como no Capítulo~\ref{cap:pot}. Com eles, o faceamento em passe único, o torneamento externo de desbaste e a furação passam da capacidade da máquina, e o rebaixo frontal fica em 97\,\%. Fizemos quatro ajustes: o avanço de desbaste caiu de 0,30 para 0,28\,mm/volta; o faceamento e o degrau do aro foram divididos em dois passes; a furação passou a f = 0,09\,mm/volta e v\textsubscript{c} = 150\,m/min; e o rebaixo ficou com 0,12\,mm/volta e 160\,m/min.
 
 \begin{table}[H]
 \centering
@@ -73,13 +73,13 @@ Rebaixo frontal (1º mergulho, Ø104,4) & 5,00 & 0,12 & 180 & 549 & 10,7 & 11,0\
 
 \section{Parâmetros adotados}
 
-A Tabela~\ref{tab:param} apresenta os parâmetros adotados nas operações com ferramenta de geometria definida. Por exemplo, no faceamento de desbaste, partindo do diâmetro de 160 mm com v\textsubscript{c} = 300 m/min e f = 0,28 mm/volta, as Equações \eqref{eq:n} e \eqref{eq:vf} dão:
+A Tabela~\ref{tab:param} traz os parâmetros adotados nas operações com ferramenta de geometria definida. No faceamento de desbaste, por exemplo, partindo do Ø160 com v\textsubscript{c} = 300 m/min e f = 0,28 mm/volta, as Equações \eqref{eq:n} e \eqref{eq:vf} dão:
 
 \[
   n = \frac{1000 \cdot 300}{\pi \cdot 160} = 597 \ \text{rpm} \qquad v_{f} = 0,28 \cdot 597 = 167 \ \text{mm/min}
 \]
 
-Com a velocidade de corte constante, a rotação sobe à medida que a ferramenta se aproxima do centro, até o limite de 3000 rpm do torno.
+Com velocidade de corte constante, a rotação sobe conforme a ferramenta se aproxima do centro, até o limite de 3.000 rpm do torno.
 
 \begin{table}[H]
 \centering
@@ -90,7 +90,7 @@ Com a velocidade de corte constante, a rotação sobe à medida que a ferramenta
 \rowcolor{cinza} \textbf{Operação} & \textbf{Ferr.} & \textbf{a\textsubscript{p} (mm)} & \textbf{f (mm)} & \textbf{v\textsubscript{c} (m/min)} & \textbf{n (rpm)} & \textbf{v\textsubscript{f} (mm/min)} \\ \hline
 20.1 / 30.1 – Faceamento de desbaste (2 passes) & T01 & 1,425 & 0,28 & 300 & 597 a 3.000 & 167 a 840\\ \hline
 20.2 / 30.2 – Torneamento externo de desbaste & T01 & 1,5 & 0,28 & 280 & 557 & 156\\ \hline
-20.3 / 30.3 – Degrau do aro & T01 & 1,15 & 0,28 & 300 & 608 a 2.032 & 170 a 569 \\ \hline
+20.3 / 30.3 – Degrau do aro (2 passes) & T01 & 0,825 & 0,28 & 300 & 608 a 2.032 & 170 a 569 \\ \hline
 20.4 – Furação Ø23 & T03 & 11,5 & 0,09 & 150 & 2.076 & 187 \\ \hline
 20.5 / 30.4 – Rebaixo: 8 mergulhos & T05 & 5 (largura) & 0,12 & 160 & 488 a 987 & 59 a 118 \\ \hline
 20.6 / 30.5 – Acabamento externo & T02 & 0,5 & 0,15 & 400 & 811 a 3.000 & 122 a 450 \\ \hline
@@ -103,11 +103,11 @@ Com a velocidade de corte constante, a rotação sobe à medida que a ferramenta
 \fonte{Elaborado pelo grupo com base em Sandvik Coromant (2026a) e ZPS-FN (2026).}
 \end{table}
 
-No mandrilamento, a velocidade recomendada, de 395 a 465 m/min, exigiria mais de 5.000 rpm; com o limite de 3.000 rpm do torno, a velocidade fica em 231 m/min, o que apenas aumenta um pouco o tempo de corte. No fresamento dos dentes, os 15 m/min recomendados corresponderiam a 48 rpm, abaixo da rotação mínima da fresadora, de 60 rpm. Com 60 rpm a velocidade é de 18,8 m/min, valor entre os indicados pelo fabricante para aços de até 850 N/mm² (15 m/min) e de até 600 N/mm² (20 m/min); o SAE 8620 recozido, com cerca de 175 HB, fica entre essas duas classes. No canal dos rasgos, em que a fresa trabalha com a largura total, a espessura máxima do cavaco é igual ao avanço por dente, e f\textsubscript{z} = 0,10 mm fica dentro da faixa do fabricante. No contorno, com 1 mm de penetração lateral, o avanço por dente foi aumentado para 0,20 mm, de modo que a espessura máxima do cavaco (Equação \eqref{eq:hex}) fique em 0,097 mm, dentro da faixa de 0,08 a 0,2 mm do fabricante.
+No mandrilamento, a velocidade recomendada, de 395 a 465 m/min, pediria mais de 5.000 rpm. Com o limite de 3.000 rpm do torno, ficamos em 231 m/min, o que só alonga um pouco o tempo de corte. No fresamento dos dentes, os 15 m/min recomendados dariam 48 rpm, abaixo da rotação mínima da fresadora (60 rpm). A 60 rpm a velocidade é de 18,8 m/min, entre os valores do fabricante para aços de até 850 N/mm² (15 m/min) e de até 600 N/mm² (20 m/min); o SAE 8620 recozido, com cerca de 175 HB, está entre essas duas classes. No canal dos rasgos a fresa trabalha com a largura toda, a espessura máxima do cavaco é igual ao avanço por dente, e f\textsubscript{z} = 0,10 mm está na faixa do fabricante. No contorno, com 1 mm de penetração lateral, subimos o avanço por dente para 0,20 mm, e a espessura máxima do cavaco (Equação \eqref{eq:hex}) fica em 0,097 mm, também dentro da faixa de 0,08 a 0,2 mm.
 
 \section{Retificação}
 
-Nas retificações, os parâmetros estão na Tabela~\ref{tab:paramret}. Na retificação plana, o rebolo de 350 mm a 1.450 rpm tem velocidade periférica de 26,6 m/s; na retificação interna, o rebolo de Ø20 mm precisa girar a cerca de 28.650 rpm para atingir 30 m/s, valor dentro da faixa de 6.000 a 120.000 rpm dos eixos internos da S121. Os passes somam o sobremetal: na plana, 7 $\times$ 0,02 + 2 $\times$ 0,005 = 0,15 mm por face; na interna, 44 $\times$ 0,005 + 12 $\times$ 0,0025 = 0,25 mm no raio. Os passes finais sem penetração (faiscamento) eliminam a deflexão elástica do sistema e melhoram o acabamento (Aula 18).
+Os parâmetros das retificações estão na Tabela~\ref{tab:paramret}. Na plana, o rebolo de 350 mm a 1.450 rpm tem velocidade periférica de 26,6 m/s. Na interna, o rebolo de Ø20 mm precisa de cerca de 28.650 rpm para chegar a 30 m/s, rotação dentro da faixa de 6.000 a 120.000 rpm dos eixos internos da S121. Os passes somam o sobremetal: na plana, 7 $\times$ 0,02 + 2 $\times$ 0,005 = 0,15 mm por face; na interna, 44 $\times$ 0,005 + 12 $\times$ 0,0025 = 0,25 mm no raio. As duas terminam com passes sem penetração (faiscamento), como na Aula 18.
 
 \begin{table}[H]
 \centering
